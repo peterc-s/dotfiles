@@ -1,0 +1,21 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
+
+#AutoStart applications
+sxhkd &
+picom --config $HOME/.config/picom/picom.conf &
+nitrogen --restore &
+dunst &
+polybar &
