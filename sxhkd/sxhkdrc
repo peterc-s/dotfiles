@@ -157,3 +157,7 @@ Print
 # swap windows in monocle view
 alt + Tab
     bspc node -f next.local.window
+
+# lock screen
+ctrl + alt + l
+    betterlockscreen -l dim
