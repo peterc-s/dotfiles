@@ -11,6 +11,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc config pointer_action1 move 
+bpsc config pointer_action2 resize_corner
+
 xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 
 #AutoStart applications
