@@ -49,4 +49,6 @@ return require('packer').startup(function(use)
   use({ 'm4xshen/autoclose.nvim' })
 
   use({ 'kylechui/nvim-surround', tag = '*' })
+
+  use({ 'tikhomirov/vim-glsl' })
 end)
