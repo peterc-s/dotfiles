@@ -12,7 +12,7 @@ super + d
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; polybar-msg cmd restart
 
 #
 # bspwm hotkeys
@@ -22,9 +22,9 @@ super + Escape
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
-super + {_,shift + }x
-	bspc node -{c,k}
+# kill
+super {shift +, +} x
+	bspc node -{k,c}
 
 # alternate between the tiled and monocle layout
 super + m
