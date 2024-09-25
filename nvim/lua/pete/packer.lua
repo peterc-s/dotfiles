@@ -51,4 +51,8 @@ return require('packer').startup(function(use)
   use({ 'kylechui/nvim-surround', tag = '*' })
 
   use({ 'tikhomirov/vim-glsl' })
+
+  use({ 'tadmccorkle/markdown.nvim' })
+
+  use({ 'norcalli/nvim-colorizer.lua' })
 end)

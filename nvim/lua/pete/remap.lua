@@ -30,6 +30,7 @@ vim.keymap.set("n", "<leader>f", function()
 end)
 
 vim.api.nvim_set_keymap('n', 'Q', '!!$SHELL<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'F', '!!figlet<CR>', { noremap = true })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
