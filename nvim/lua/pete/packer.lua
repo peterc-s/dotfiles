@@ -55,4 +55,12 @@ return require('packer').startup(function(use)
   use({ 'tadmccorkle/markdown.nvim' })
 
   use({ 'norcalli/nvim-colorizer.lua' })
+
+  use({
+      "giusgad/pets.nvim",
+      requires = {
+          "giusgad/hologram.nvim",
+          "MunifTanjim/nui.nvim",
+      }
+  })
 end)

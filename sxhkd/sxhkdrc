@@ -7,8 +7,12 @@ ctrl + alt + t
 	kitty
 
 # program launcher
-super + d
-	rofi -show run
+super {+, shift +} d
+	rofi -show {drun, run}
+
+# window finder
+super + q
+    rofi -show window
 
 # make sxhkd reload its configuration files:
 super + Escape
