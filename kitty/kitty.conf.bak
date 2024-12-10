@@ -2451,9 +2451,3 @@ background_opacity 0.9
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_THEME
-# Custom
-include current-theme.conf
-# END_KITTY_THEME
