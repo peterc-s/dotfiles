@@ -16,7 +16,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias cls="clear"
 alias goldwarden="flatpak run --command=goldwarden com.quexten.Goldwarden"
 alias gits="git status"
-alias gitd="git difftool --no-symlinks --dir-diff HEAD"
+alias gitd="git difftool --no-symlinks --dir-diff HEAD || git status"
 alias gita="git add --all"
 alias gitc="git commit -m"
 alias gitps="git push"
