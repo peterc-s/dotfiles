@@ -1,0 +1,95 @@
+## Window
+window-decoration = false
+confirm-close-surface = false
+gtk-tabs-location = bottom
+gtk-adwaita = false
+
+## Font
+font-family = MesloLGS NF
+font-size = 11
+
+## Theming
+foreground = C5C8C6
+background = 080A0E
+background-opacity = 0.9
+
+palette = 0=#101010
+palette = 8=#3E3E4D
+
+palette = 1=#A54222
+palette = 9=#C56242
+
+palette = 2=#19cb00
+palette = 10=#23fd00
+
+palette = 3=#D0A654
+palette = 11=#F0C674
+
+palette = 4=#0A6FDF
+palette = 12=#2A8FEF
+
+palette = 5=#AB0EB6
+palette = 13=#CB2ED6
+
+palette = 6=#6AAE97
+palette = 14=#8ABEB7
+
+palette = 7=#C5C8C6
+palette = 15=#E5E8E6
+
+## Keybinds
+# Unbinding defaults
+keybind = super+ctrl+shift+equal=unbind
+keybind = super+ctrl+right_bracket=unbind
+keybind = super+ctrl+left_bracket=unbind
+keybind = super+ctrl+shift+up=unbind
+keybind = super+ctrl+shift+left=unbind
+keybind = super+ctrl+shift+down=unbind
+keybind = super+ctrl+shift+right=unbind
+keybind = ctrl+page_up=unbind
+keybind = ctrl+tab=unbind
+keybind = ctrl+alt+up=unbind
+keybind = ctrl+alt+left=unbind
+keybind = ctrl+alt+down=unbind
+keybind = ctrl+alt+right=unbind
+keybind = alt+five=unbind
+keybind = alt+eight=unbind
+keybind = alt+three=unbind
+keybind = alt+nine=unbind
+keybind = alt+two=unbind
+keybind = alt+four=unbind
+keybind = alt+f4=unbind
+keybind = alt+one=unbind
+keybind = alt+six=unbind
+keybind = alt+seven=unbind
+keybind = ctrl+page_down=unbind
+keybind = shift+insert=unbind
+keybind = shift+page_up=unbind
+keybind = shift+page_down=unbind
+keybind = shift+end=unbind
+keybind = shift+home=unbind
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+tab=unbind
+
+# Splits
+keybind = ctrl+shift+enter=new_split:right
+keybind = ctrl+alt+shift+l=equalize_splits
+
+keybind = ctrl+shift+right_bracket=goto_split:next
+keybind = ctrl+shift+left_bracket=goto_split:previous
+
+keybind = ctrl+alt+shift+up=resize_split:up,10
+keybind = ctrl+alt+shift+left=resize_split:left,10
+keybind = ctrl+alt+shift+down=resize_split:down,10
+keybind = ctrl+alt+shift+right=resize_split:right,10
+
+# Tabs
+keybind = ctrl+shift+left=previous_tab
+keybind = ctrl+shift+right=next_tab
+
+# Scrolling
+keybind = page_up=scroll_page_up
+keybind = page_down=scroll_page_down
+keybind = end=scroll_to_bottom
+keybind = home=scroll_to_top
