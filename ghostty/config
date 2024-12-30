@@ -2,7 +2,6 @@
 window-decoration = false
 confirm-close-surface = false
 gtk-tabs-location = bottom
-gtk-adwaita = false
 
 ## Font
 font-family = MesloLGS NF
