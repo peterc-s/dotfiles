@@ -27,7 +27,6 @@ function y() {
 }
 
 alias cls="clear"
-alias goldwarden="flatpak run --command=goldwarden com.quexten.Goldwarden"
 alias gits="git status"
 alias gitd="git difftool --no-symlinks --dir-diff HEAD || git status"
 alias gita="git add --all"
@@ -41,9 +40,10 @@ alias va="source .venv/bin/activate"
 alias vd="deactivate"
 alias vac="source .venv/bin/activate;codium ."
 alias kd="kitten diff"
-alias fnvim="fzf | xargs nvim {}"
-alias fcat="fzf | xargs cat {}"
-alias fcd="fzf | xargs dirname | while read -r result; do cd "$result" || exit; done"
+alias fnvim="cd ~; fzf | xargs nvim"
+alias fcat="cd ~; fzf | xargs cat"
+alias ppttopdf="libreoffice --headless --convert-to pdf"
+alias mk="mkdir"
 
 # Private aliases
 source ~/.zsh_priv_aliases
@@ -65,9 +65,25 @@ fzf-history-widget-accept() {
 zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
 
+# kubectl
+source <(kubectl completion zsh)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # Set Vi bindings in terminal
 bindkey -v
+
+PWD=$HOME/XMOS/XTC/15.3.1 source $HOME/XMOS/XTC/15.3.1/SetEnv
 
 # P10K ignore warnings about tereminder output
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 $(which tereminder)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# cuda
+export CUDA_HOME=/opt/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+

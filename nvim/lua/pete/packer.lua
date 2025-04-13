@@ -31,9 +31,11 @@ return require('packer').startup(function(use)
 
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
+
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-nvim-lsp'},
+          {'saadparwaiz1/cmp_luasnip'},
 		  {'L3MON4D3/LuaSnip'},
 	  }
   })
@@ -54,6 +56,8 @@ return require('packer').startup(function(use)
 
   use({ 'tadmccorkle/markdown.nvim' })
 
+  use({ 'lervag/vimtex' })
+
   use({ 'norcalli/nvim-colorizer.lua' })
 
   use({
@@ -62,5 +66,11 @@ return require('packer').startup(function(use)
           "giusgad/hologram.nvim",
           "MunifTanjim/nui.nvim",
       }
+  })
+
+  use({
+      "L3MON4D3/LuaSnip",
+      tag = "v2.*",
+      run = "make install_jsregexp"
   })
 end)

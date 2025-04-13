@@ -3,8 +3,8 @@
 #
 
 # terminal emulator
-ctrl + alt + t
-	kitty
+ctrl + alt {+, shift +}  t
+	{kitty, ghostty}
 
 # program launcher
 super {+, shift +} d
@@ -156,7 +156,7 @@ XF86MonBrightness{Up,Down}
 #
 
 Print
-    flameshot gui; sleep 5m; killall flameshot
+    flameshot gui
 
 # swap windows in monocle view
 alt + Tab
