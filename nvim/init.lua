@@ -1,3 +1,5 @@
 require("pete.packer")
 require("pete.set")
 require("pete.remap")
+require("pete.wrap")
+require("pete.rulers")
