@@ -12,6 +12,21 @@ set $right l
 # Your preferred terminal emulator
 # Recommends: foot
 set $term kitty
+
+set $lock_cmd swaylock \
+	--image /home/pete/Pictures/wlfgrl.png \
+	--indicator-radius 25 \
+	--indicator-thickness 5 \
+	--ring-color 373B41 \
+	--key-hl-color F0C674 \
+	--inside-wrong-color C56242 \
+	--ring-wrong-color C56424 \
+	--inside-clear-color F0C674 \
+	--ring-ver-color 8ABEB7 \
+	--inside-ver-color 8ABEB7 \
+	--indicator-x-position 50 \
+	--indicator-y-position 1150
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -45,9 +60,9 @@ output HDMI-A-1 position 0,0
 # Example configuration:
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 $lock_cmd \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep $lock_cmd
 
 exec waybar
 exec dunst
@@ -112,6 +127,8 @@ input * {
     bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
     bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+
+    bindsym Ctrl+Mod1+l exec $lock_cmd
 #
 # Moving around:
 #

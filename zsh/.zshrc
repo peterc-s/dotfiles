@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 # P10K Instant prompt stuff
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -14,8 +16,6 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PATH=/home/pete/.cargo/bin:$PATH
 export RLWRAP_HOME="$HOME/.config/rlwrap"
-export GPG_TTY=$(tty)
-
 
 # Aliases and functions
 function y() {
