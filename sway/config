@@ -1,4 +1,4 @@
-# Read `man 5 sway` for a complete reference.
+
 
 ### Variables
 #
@@ -37,6 +37,9 @@ output * bg /home/pete/Pictures/wlfgrl.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+output eDP-1 position 0,1080
+output HDMI-A-1 position 0,0
+
 ### Idle configuration
 #
 # Example configuration:
@@ -45,6 +48,10 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
+
+exec waybar
+exec dunst
+exec autotiling-rs
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -96,7 +103,15 @@ input * {
     bindsym $mod+Escape reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Alt+q exec swaymsg exit
+
+    bindsym XF86AudioMute pulsemixer --toggle-mute
+    bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
+    bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+    bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+    bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+
+    bindsym Print exec grim -g "$(slurp)" - | swappy -f -
 #
 # Moving around:
 #
@@ -151,6 +166,18 @@ input * {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+
+    workspace 1 output eDP-1
+    workspace 2 output eDP-1
+    workspace 3 output eDP-1
+    workspace 4 output eDP-1
+    workspace 5 output eDP-1
+    workspace 6 output HDMI-A-1
+    workspace 7 output HDMI-A-1
+    workspace 8 output HDMI-A-1
+    workspace 9 output HDMI-A-1
+    workspace 10 output HDMI-A-1
 #
 # Layout stuff:
 #
@@ -212,6 +239,14 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+default_border pixel 2
+client.focused #373B41 #373B41 #C5C8C8 #373B41 #373B41
+client.focused_inactive #282A2E #282A2E #C5C8C8 #282A2E #282A2E
+client.focused_tab_title #282A2E #282A2E #C5C8C8
+client.unfocused #282A2E #282A2E #C5C8C8 #282A2E #282A2E
+# gaps outer 4
+gaps inner 6
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d

@@ -14,6 +14,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PATH=/home/pete/.cargo/bin:$PATH
 export RLWRAP_HOME="$HOME/.config/rlwrap"
+export GPG_TTY=$(tty)
 
 
 # Aliases and functions
@@ -45,6 +46,7 @@ alias fnvim="cd ~; fzf | xargs nvim"
 alias fcat="cd ~; fzf | xargs cat"
 alias ppttopdf="libreoffice --headless --convert-to pdf"
 alias mk="mkdir"
+alias tmr="tereminder"
 
 # Private aliases
 source ~/.zsh_priv_aliases
@@ -73,11 +75,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Set Vi bindings in terminal
 bindkey -v
 
-PWD=$HOME/XMOS/XTC/15.3.1 source $HOME/XMOS/XTC/15.3.1/SetEnv
-
-# P10K ignore warnings about tereminder output
-POWERLEVEL9K_INSTANT_PROMPT=quiet
-$(which tereminder)
+# PWD=$HOME/XMOS/XTC/15.3.1 source $HOME/XMOS/XTC/15.3.1/SetEnv
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

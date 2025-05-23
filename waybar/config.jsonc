@@ -18,9 +18,9 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
-	      // if mullvad needed, pull mullvad status script from
+        // if mullvad needed, pull mullvad status script from
         // polybar scripts file
-        // "custom/mullvad",
+        "custom/mullvad",
         "power-profiles-daemon",
         "cpu",
         "memory",
@@ -28,7 +28,7 @@
         "backlight",
         "battery",
         "clock",
-        "tray",
+        // "tray",
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -62,7 +62,10 @@
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
@@ -121,12 +124,22 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": [
+            "🌑",
+            "🌘",
+            "🌗",
+            "🌖",
+            "🌕"
+        ]
     },
     "battery": {
         "states": {
@@ -141,21 +154,27 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -181,7 +200,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -198,20 +221,20 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "format": "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     },
     "custom/mullvad": {
-    	"type" : "custom/script",
-	"exec" : "/etc/xdg/waybar/scripts/vpn-mullvad.sh",
-	"interval" : 1,
+        "type": "custom/script",
+        "exec": "$HOME/.config/polybar/scripts/vpn-status.sh",
+        "interval": 1,
     },
 }
