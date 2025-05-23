@@ -29,6 +29,7 @@ button {
 }
 
 #workspaces button {
+    padding: 0 0px;
     background-color: transparent;
     color: #C5C8C6;
 }
