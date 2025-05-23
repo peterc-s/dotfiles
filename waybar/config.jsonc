@@ -1,11 +1,7 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "height": 30,
+    "spacing": 4,
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
@@ -15,7 +11,6 @@
         "sway/window"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "backlight",
         "memory",
@@ -23,39 +18,9 @@
         "temperature",
         "network",
         "custom/mullvad",
-        // if mullvad needed, pull mullvad status script from
-        // polybar scripts file
-        "power-profiles-daemon",
         "battery",
         "clock"
-        // "tray",
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -69,67 +34,29 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "<span color=\"#F0C674\">I</span>",
-            "deactivated": "<span color=\"#C5C8C675\">D</span>"
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}"
     },
     "cpu": {
         "format": "<span color=\"#F0C674\">C</span> {usage}%",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 1
     },
     "memory": {
-        "format": "<span color=\"#F0C674\">R</span> {used:0.1f}G"
+        "format": "<span color=\"#F0C674\">R</span> {used:0.1f}G",
+        "interval": 1
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "<span color=\"#F0C674\">{icon}</span> {temperatureC}°C",
         "format-icons": [
-            "T",
-        ]
+            "T"
+        ],
+        "interval": 1
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "<span color=\"#F0C674\">{icon}</span> {percent}%",
         "format-icons": [
             "B"
@@ -137,7 +64,6 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -145,9 +71,8 @@
         "format-full": "",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{icon} {time}",
         "format-good": "",
-        // "format-full": "",
         "format-icons": [
             "",
             "",
@@ -159,34 +84,21 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
-        }
-    },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "<span color=\"#F0C674\">{ifname}</span> {essid}",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "<span color=\"#F0C674\">{ifname}</span> {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "<span color=\"#F0C674\">{icon}</span> {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "<span color=\"#F0C674\"></span> {volume}%",
-        "format-source-muted": "",
+        "format": "{format_source} <span color=\"#F0C674\">{icon}</span> {volume}%",
+        "format-bluetooth": "{format_source} <span color=\"#F0C674\">{icon}</span> {volume}%",
+        "format-bluetooth-muted": "{format_source} <span color=\"#F0C674\">{icon}</span> <span color=\"#707880\">muted</span>",
+        "format-muted": "{format_source} <span color=\"#F0C674\">{icon}</span> <span color=\"#707880\">muted</span>",
+        "format-source": "<span color=\"#F0C674\">M</span>",
+        "format-source-muted": "<span color=\"#707880\">M</span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -194,41 +106,13 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "default": ["V"]
         },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format": "⏻ ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+        "on-click": "pulsemixer --toggle-mute"
     },
     "custom/mullvad": {
         "type": "custom/script",
         "exec": "$HOME/.config/polybar/scripts/vpn-status.sh",
-        "interval": 1,
-    },
+        "interval": 1
+    }
 }

@@ -9,10 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-# Recommends: foot
 set $term kitty
-
 set $lock_cmd swaylock \
 	--image /home/pete/Pictures/wlfgrl.png \
 	--indicator-radius 25 \
@@ -27,70 +24,33 @@ set $lock_cmd swaylock \
 	--indicator-x-position 50 \
 	--indicator-y-position 1150 \
 	--effect-blur 7x5
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# Recommends: rofi-wayland
 set $rofi_cmd rofi \
         -terminal '$term'
-# Shows a combined list of the applications with desktop files and
-# executables from PATH.
-# TODO: add window with the next release of rofi-wayland
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-
 set $browser librewolf
+set $mute_mic_cmd pulsemixer --list-sources | rg -i "mic" | cut -f3 | cut -d "," -f1 | cut -c 6- | xargs -L1 pulsemixer --toggle-mute --id
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# Requires: desktop-backgrounds-compat, swaybg
 output * bg /home/pete/Pictures/wlfgrl.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
 output eDP-1 position 0,1080
 output HDMI-A-1 position 0,0
 
 ### Idle configuration
-#
-# Example configuration:
-
 exec swayidle -w \
          timeout 300 $lock_cmd \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep $lock_cmd
 
+### Startup
 exec waybar
 exec dunst
 exec autotiling-rs
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 ### Input configuration
-
 input * {
 	xkb_layout "gb"
+	xkb_options caps:backspace
 }
-
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -121,7 +81,8 @@ input * {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Alt+q exec swaymsg exit
 
-    bindsym XF86AudioMute pulsemixer --toggle-mute
+    bindsym XF86AudioMicMute exec $mute_mic_cmd
+    bindsym XF86AudioMute exec pulsemixer --toggle-mute
     bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
     bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
     bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
