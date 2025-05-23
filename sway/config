@@ -25,7 +25,8 @@ set $lock_cmd swaylock \
 	--ring-ver-color 8ABEB7 \
 	--inside-ver-color 8ABEB7 \
 	--indicator-x-position 50 \
-	--indicator-y-position 1150
+	--indicator-y-position 1150 \
+	--effect-blur 7x5
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
