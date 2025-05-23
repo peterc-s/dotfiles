@@ -25,11 +25,11 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/scratchpad": {
-        "format": "{icon} {count}",
+        "format": "<span color=\"#F0C674\">{icon}</span> {count}",
         "show-empty": false,
         "format-icons": [
             "",
-            ""
+            "S"
         ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
