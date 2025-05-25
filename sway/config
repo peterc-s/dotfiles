@@ -5,6 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
+set $explorer nemo
 set $lock_cmd swaylock \
 	--image /home/pete/Pictures/wlfgrl.png \
 	--indicator-radius 25 \
@@ -60,6 +61,7 @@ input * {
 ### Key bindings
 # Opening stuff
 bindsym Ctrl+Mod1+t exec $term
+bindsym $mod+e exec $explorer
 bindsym $mod+x kill
 bindsym $mod+d exec $menu
 bindsym $mod+w exec $browser
@@ -133,7 +135,7 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+t layout stacking
 bindsym $mod+Shift+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+g layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+s floating toggle
 bindsym $mod+space focus mode_toggle
@@ -167,6 +169,7 @@ client.focused_inactive #282A2E #282A2E #C5C8C8 #282A2E #282A2E
 client.focused_tab_title #282A2E #282A2E #C5C8C8
 client.unfocused #282A2E #282A2E #C5C8C8 #282A2E #282A2E
 gaps inner 6
+seat seat0 xcursor_theme Adwaita 1
 
 ### Includes
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'

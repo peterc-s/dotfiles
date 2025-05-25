@@ -43,3 +43,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- format
 vim.keymap.set("n", "<leader>f", ":LspZeroFormat<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>F", "<cmd>silent !prettier --write %<CR>")
+
+-- stop using these
+vim.keymap.set("n", "<Up>", "<Nop>", { noremap = true })
+vim.keymap.set("n", "<Left>", "<Nop>", { noremap = true })
+vim.keymap.set("n", "<Right>", "<Nop>", { noremap = true })
+vim.keymap.set("n", "<Down>", "<Nop>", { noremap = true })
