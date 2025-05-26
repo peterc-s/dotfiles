@@ -71,27 +71,17 @@ starship init fish | source
 
 # Fix stupid starship newlines
 set -g __cmd_executed false
-set -g __screen_cleared false
 
 function mark_command_start --on-event fish_preexec
     set -g __cmd_executed true
 end
 
-function clear_screen
-    set -g __screen_cleared true
-    command clear
-    commandline -f repaint
-end
-
-bind \cl 'clear_screen; commandline -f repaint'
-
 function fish_prompt
-    if test "$__cmd_executed" = true -a "$__screen_cleared" = false
+    if test "$__cmd_executed" = true
         echo
     end
 
-    set -g __cmd_executed false
-    set -g __screen_cleared false
+    set -g __cmd_executed true
 
     starship prompt --status=$status --cmd-duration=$CMD_DURATION --jobs=(count (jobs -p))
 end
