@@ -1,4 +1,5 @@
 nvim/plugin/packer_compiled.lua
+**/*.pacsave
 nvim/spell
 nvim/spell/*
 **/*.bak

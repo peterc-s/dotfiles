@@ -17,6 +17,20 @@ ls.add_snippets("tex", {
     }),
 })
 
+-- MD snippets
+-- presenterm
+ls.add_snippets("markdown", {
+    s("\\p", {
+        t("<!--pause-->"), i(0)
+    })
+})
+
+ls.add_snippets("markdown", {
+    s("\\jump", {
+        t("<!--jump_to_middle-->"), i(0)
+    })
+})
+
 -- Setup cmp
 cmp.setup({
   mapping = cmp.mapping.preset.insert({

@@ -1,3 +1,8 @@
+### Includes
+include '/usr/share/sway/config.d/*.conf'
+include '/etc/sway/config.d/*'
+include "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf"
+
 ### Variables
 set $mod Mod4
 set $left h
@@ -171,5 +176,3 @@ client.unfocused #282A2E #282A2E #C5C8C8 #282A2E #282A2E
 gaps inner 6
 seat seat0 xcursor_theme Adwaita 1
 
-### Includes
-include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
