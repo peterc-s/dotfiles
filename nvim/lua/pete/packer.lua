@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
 
     use({ 'tpope/vim-fugitive' })
 
+    use({ "hrsh7th/nvim-cmp" })
+
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -75,6 +77,7 @@ return require('packer').startup(function(use)
     })
 
     use({ "stevearc/dressing.nvim" })
+
     use({
         "ziontee113/icon-picker.nvim",
         config = function()
@@ -82,5 +85,30 @@ return require('packer').startup(function(use)
                 disable_legacy_commands = true
             })
         end,
+    })
+
+    -- what a config
+    use({
+        'Julian/lean.nvim',
+        ft = 'lean',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'nvim-lua/plenary.nvim',
+        },
+        config = function()
+            require('lean').setup({
+                mappings = true,
+            })
+        end,
+        setup = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "lean",
+                callback = function()
+                    require('lean').setup({
+                        mappings = true,
+                    })
+                end,
+            })
+        end
     })
 end)
