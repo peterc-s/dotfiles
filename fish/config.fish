@@ -5,6 +5,8 @@ set -gx VISUAL nvim
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx RLWRAP_HOME "$HOME/.config/rlwrap"
 
+tereminder
+
 if status is-interactive
 end
 
@@ -71,6 +73,7 @@ starship init fish | source
 
 # Fix stupid starship newlines
 set -g __cmd_executed false
+set -g __screen_cleared false
 
 function mark_command_start --on-event fish_preexec
     set -g __cmd_executed true

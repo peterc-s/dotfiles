@@ -73,6 +73,7 @@ bindsym $mod+w exec $browser
 floating_modifier $mod normal
 bindsym $mod+Escape reload
 bindsym $mod+Alt+q exec swaymsg exit
+bindsym $mod+o exec obsidian
 
 # Fn keys
 bindsym XF86AudioMicMute exec $mute_mic_cmd
