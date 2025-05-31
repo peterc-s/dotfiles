@@ -57,6 +57,9 @@ exec waybar
 exec dunst
 exec autotiling-rs
 
+### Lock on lid shut
+bindswitch lid:on exec $lock_cmd
+
 ### Input configuration
 input * {
 	xkb_layout "gb"
