@@ -22,8 +22,6 @@ set $lock_cmd swaylock \
 	--inside-clear-color F0C674 \
 	--ring-ver-color 8ABEB7 \
 	--inside-ver-color 8ABEB7 \
-	--indicator-x-position 50 \
-	--indicator-y-position 1150 \
 	--effect-blur 7x5
 set $rofi_cmd rofi \
         -terminal '$term'
