@@ -9,7 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term foot
 set $explorer nemo
 set $lock_cmd swaylock \
 	--image /home/pete/Pictures/wlfgrl.png \
