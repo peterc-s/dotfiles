@@ -1,0 +1,72 @@
+keybinds clear-defaults=true {
+    normal {
+        // Kitty-like keybindings
+        bind "Ctrl Shift Enter" { NewPane "Down"; }
+        bind "Ctrl Shift Alt Enter" { NewPane "Right"; }
+        bind "Ctrl Shift t" { NewTab; }
+        bind "Ctrl Shift w" { CloseFocus; }
+        bind "Ctrl Shift q" { CloseTab; }
+        bind "Ctrl Shift Right" { GoToNextTab; }
+        bind "Ctrl Shift Left" { GoToPreviousTab; }
+        bind "Ctrl Shift ." { MoveTab "Right"; }
+        bind "Ctrl Shift ," { MoveTab "Left"; }
+        bind "Ctrl Shift ]" { FocusNextPane; }
+        bind "Ctrl Shift [" { FocusPreviousPane; }
+        bind "Ctrl Shift l" { NextSwapLayout; }
+        bind "Ctrl Shift z" { ToggleFocusFullscreen; }
+        bind "Ctrl Shift d" { Detach; }
+        bind "Ctrl Shift c" { Copy; }
+        // bind "Ctrl Shift v" { Paste; }
+        bind "Ctrl Shift s" { SwitchToMode "Scroll"; }
+        bind "Ctrl Shift f" { SwitchToMode "Move"; }
+        bind "Ctrl Shift =" { Resize "Increase"; }
+        bind "Ctrl Shift -" { Resize "Decrease"; }
+        
+        // Navigation
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        
+        // System
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Quit; }
+    }
+
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }
+    }
+
+    scroll {
+        bind "Ctrl Shift s" { SwitchToMode "Normal"; }
+        bind "Ctrl Shift c" { Copy; }
+        bind "Up" "k" { ScrollUp; }
+        bind "Down" "j" { ScrollDown; }
+        bind "PageUp" { PageScrollUp; }
+        bind "PageDown" { PageScrollDown; }
+        bind "Ctrl Shift Home" { ScrollToTop; }
+        bind "Ctrl Shift End" { ScrollToBottom; }
+        bind "u" { HalfPageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "/" { SwitchToMode "EnterSearch"; }
+    }
+
+    move {
+        bind "Ctrl Shift f" { SwitchToMode "Normal"; }
+        bind "Left" "h" { MovePane "Left"; }
+        bind "Right" "l" { MovePane "Right"; }
+        bind "Down" "j" { MovePane "Down"; }
+        bind "Up" "k" { MovePane "Up"; }
+        bind "Enter" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
+    }
+
+    // Shared escape behavior
+    shared_except "normal" "locked" {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+    }
+}
+
+plugins { }
+
