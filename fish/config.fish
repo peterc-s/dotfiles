@@ -5,7 +5,7 @@ set -gx VISUAL nvim
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx RLWRAP_HOME "$HOME/.config/rlwrap"
 
-tereminder
+# tereminder
 
 if status is-interactive
 end
@@ -50,8 +50,8 @@ set -gx FZF_DEFAULT_OPTS "--reverse"
 set -gx FZF_ALT_C_OPTS "--preview 'tree -C {} | head -200'"
 
 # Kubectl configuration
-kubectl completion fish | source
-set -gx PATH $HOME/.krew/bin $PATH
+# kubectl completion fish | source
+# set -gx PATH $HOME/.krew/bin $PATH
 
 # Vi mode
 fish_vi_key_bindings
@@ -62,7 +62,7 @@ set -gx PATH $CUDA_HOME/bin $PATH
 set -gx LD_LIBRARY_PATH $CUDA_HOME/lib64 $LD_LIBRARY_PATH
 
 # Private aliases
-source ~/.config/fish/priv_aliases.fish
+# source ~/.config/fish/priv_aliases.fish
 
 if type -q nvm
     nvm use latest >/dev/null
