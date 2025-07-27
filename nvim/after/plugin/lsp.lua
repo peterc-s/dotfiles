@@ -1,86 +1,46 @@
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-local ls = require("luasnip")
-local s = ls.snippet
-local t = ls.text_node
-local i = ls.insert_node
-
--- LaTeX Snippets
-ls.add_snippets("tex", {
-    s("\\figure", {
-        t("\\begin{figure}"),
-        t({ "", "    \\centering" }),
-        t({ "", "    \\caption{" }), i(1, ""), t("}"),
-        t({ "", "    \\label{" }), i(2, "fig:"), t("}"),
-        t({ "", "\\end{figure}" }),
-        i(0),
-    }),
-})
-
--- MD snippets
--- presenterm
-ls.add_snippets("markdown", {
-    s("\\p", {
-        t("<!--pause-->"), i(0)
-    })
-})
-
-ls.add_snippets("markdown", {
-    s("\\jump", {
-        t("<!--jump_to_middle-->"), i(0)
-    })
+local lsp_zero = require('lsp-zero')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+lsp_zero.default_setup({
+    capabilities = capabilities
 })
 
 -- Setup cmp
 cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-    ['<Tab>'] = cmp_action.tab_complete(),
-    ['<S-Tab>'] = cmp_action.select_prev_or_fallback,
-  }),
-  snippet = {
-      expand = function(args)
-          ls.lsp_expand(args.body)
-      end,
-  },
-  sources = {
-      { name = "luasnip" },
-      { name = "nvim_lsp" }, -- LSP completions
-      { name = "buffer" }, -- Buffer completions
-      { name = "path" }, -- Filepath completions
-  },
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<Tab>'] = cmp_action.tab_complete(),
+        ['<S-Tab>'] = cmp_action.select_prev_or_fallback,
+    }),
+    sources = {
+        { name = "nvim_lsp" }, -- LSP completions
+        { name = "luasnip" },
+        { name = "path" },     -- Filepath completions
+        { name = "buffer" },   -- Buffer completions
+        { name = "nvim_lua" },
+    },
 })
-
-local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
+    lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
--- to learn how to use mason.nvim with lsp-zero
--- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-require('mason').setup({'rust_analyzer'})
+-- Mason
+require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {},
-  handlers = {
-    lsp_zero.default_setup,
-  },
+    ensure_installed = { 'emmylua_ls', 'rust_analyzer' },
+    handlers = {
+        lsp_zero.default_setup,
+    }
 })
 
-require('lspconfig').lua_ls.setup({})
-
 -- auto format
-vim.api.nvim_create_augroup("AutoFormat", {})
-
-vim.api.nvim_create_autocmd(
-    "BufWritePost",
-    {
-        pattern = "*.rs",
-        group = "AutoFormat",
-        callback = function()
-            vim.cmd("silent !cargo fmt")
-            vim.cmd("silent !cargo clippy --fix --allow-dirty")
-            vim.cmd("edit")
-        end,
-    }
-)
+-- rust
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end
+})
