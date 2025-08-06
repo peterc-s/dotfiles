@@ -29,15 +29,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.api.nvim_set_keymap('n', 'Q', '!!$SHELL<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'F', '!!figlet<CR>', { noremap = true })
 
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- format
-vim.keymap.set("n", "<leader>f", ":LspZeroFormat<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>F", "<cmd>silent !prettier --write %<CR>")
 
 -- stop using these :)
 vim.keymap.set("n", "<Up>", "<Nop>", { noremap = true })
