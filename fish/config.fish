@@ -2,8 +2,9 @@
 set -gx GPG_TTY (tty)
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $PATH $HOME/.cargo/bin 
 set -gx RLWRAP_HOME "$HOME/.config/rlwrap"
+set -gx SUDO_EDITOR nvim
 
 # tereminder
 
@@ -31,6 +32,8 @@ alias fcat="cd ~; fzf | xargs cat"
 alias ppttopdf="libreoffice --headless --convert-to pdf"
 alias mk="mkdir"
 alias tmr="tereminder"
+alias snvim="sudoedit"
+alias su="su -l"
 
 # Yazi function
 function y
