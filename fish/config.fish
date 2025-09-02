@@ -6,10 +6,11 @@ set -gx PATH $PATH $HOME/.cargo/bin
 set -gx RLWRAP_HOME "$HOME/.config/rlwrap"
 set -gx SUDO_EDITOR nvim
 
-# tereminder
+# Vi mode
+fish_vi_key_bindings
 
-if status is-interactive
-end
+# Enable tereminder
+# tereminder
 
 # Aliases
 alias cls="clear"
@@ -35,15 +36,8 @@ alias tmr="tereminder"
 alias snvim="sudoedit"
 alias su="su -l"
 
-# Yazi function
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set -q cwd; and test -n "$cwd" -a "$cwd" != "$PWD"
-        builtin cd -- "$cwd"
-    end
-    rm -f "$tmp"
-end
+# Private aliases
+# source ~/.config/fish/priv_aliases.fish
 
 # Zoxide initialization
 zoxide init fish --cmd=cd | source
@@ -56,17 +50,12 @@ set -gx FZF_ALT_C_OPTS "--preview 'tree -C {} | head -200'"
 # kubectl completion fish | source
 # set -gx PATH $HOME/.krew/bin $PATH
 
-# Vi mode
-fish_vi_key_bindings
-
 # CUDA configuration
 set -gx CUDA_HOME /opt/cuda
 set -gx PATH $CUDA_HOME/bin $PATH
 set -gx LD_LIBRARY_PATH $CUDA_HOME/lib64 $LD_LIBRARY_PATH
 
-# Private aliases
-# source ~/.config/fish/priv_aliases.fish
-
+# NVM configuration
 if type -q nvm
     nvm use latest >/dev/null
 end
@@ -91,6 +80,3 @@ function fish_prompt
 
     starship prompt --status=$status --cmd-duration=$CMD_DURATION --jobs=(count (jobs -p))
 end
-
-# XMOS Environment
-# bass source $HOME/XMOS/XTC/15.3.1/SetEnv
