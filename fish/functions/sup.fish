@@ -11,7 +11,4 @@ function sup --description "Start SSH agent and add keys"
             end
         end
     end
-    
-    # Add any keys that ssh-add can auto-detect
-    ssh-add 2>/dev/null
 end
