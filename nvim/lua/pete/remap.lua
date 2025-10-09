@@ -86,7 +86,7 @@ vim.keymap.set("n", "<leader>b", function()
     local terms = require("toggleterm.terminal").get_all()
     for _, term in pairs(terms) do
         if term.cmd == "bacon" then
-            term:toggle()
+            term:shutdown()
             return
         end
     end
@@ -94,7 +94,7 @@ vim.keymap.set("n", "<leader>b", function()
     local bacon = Terminal:new({
         cmd = "bacon",
         direction = "vertical",
-        close_on_exit = false,
+        close_on_exit = true,
         auto_scroll = true,
         start_in_insert = false,
         count = 10,
