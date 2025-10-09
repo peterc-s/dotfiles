@@ -41,23 +41,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-cmdline" },
     { "saadparwaiz1/cmp_luasnip" },
     { "L3MON4D3/LuaSnip" },
-    {
-        "stevearc/conform.nvim",
-        opts = {
-            formatters_by_ft = {
-                lua = { "stylua" },
-                python = { "black" },
-                c = { "clang_format" },
-                cpp = { "clang_format" },
-                sh = { "shfmt" },
-                rust = { "rustfmt" },
-            },
-            format_on_save = {
-                timeout_ms = 1000,
-                lsp_fallback = true,
-            },
-        },
-    },
+    { "stevearc/conform.nvim" },
     { "pechorin/any-jump.vim" },
     { "nvim-lualine/lualine.nvim" },
     { "folke/which-key.nvim" },
