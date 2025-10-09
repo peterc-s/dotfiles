@@ -94,6 +94,9 @@ disabled = true
 format = "[ $version]($style) "
 disabled = true
 
+[c]
+disabled = true
+
 [os]
 disabled = false
 

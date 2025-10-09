@@ -1,16 +1,16 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -20,121 +20,100 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
 require("lazy").setup({
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-
-	{ "navarasu/onedark.nvim" },
-
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
-
-	{ "nvim-treesitter/playground" },
-
-	{ "ThePrimeagen/harpoon" },
-
-	{ "mbbill/undotree" },
-
-	{ "tpope/vim-fugitive" },
-
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "hrsh7th/cmp-cmdline" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "L3MON4D3/LuaSnip" },
-		},
-	},
-
-	{
-		"nvimtools/none-ls.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvimtools/none-ls-extras.nvim" },
-		},
-	},
-
-	{ "pechorin/any-jump.vim" },
-
-	{ "nvim-lualine/lualine.nvim" },
-
-	{ "folke/which-key.nvim" },
-
-	{ "numToStr/Comment.nvim" },
-
-	{ "simrat39/rust-tools.nvim" },
-
-	{ "m4xshen/autoclose.nvim" },
-
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-	},
-
-	{ "tikhomirov/vim-glsl" },
-
-	{ "tadmccorkle/markdown.nvim" },
-
-	{ "lervag/vimtex" },
-
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-
-	{
-		"giusgad/pets.nvim",
-		dependencies = {
-			"giusgad/hologram.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	},
-
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*",
-		build = "make install_jsregexp",
-	},
-
-	{ "stevearc/dressing.nvim" },
-
-	{
-		"ziontee113/icon-picker.nvim",
-		config = function()
-			require("icon-picker").setup({
-				disable_legacy_commands = true,
-			})
-		end,
-	},
-
-	{
-		"Julian/lean.nvim",
-		ft = "lean",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("lean").setup({
-				mappings = true,
-			})
-		end,
-	},
-
-	{
-		"chomosuke/typst-preview.nvim",
-		lazy = false,
-		version = "1.*",
-		opts = {},
-	},
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    { "navarasu/onedark.nvim" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+    },
+    { "nvim-treesitter/playground" },
+    { "ThePrimeagen/harpoon" },
+    { "mbbill/undotree" },
+    { "tpope/vim-fugitive" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "L3MON4D3/LuaSnip" },
+    {
+        "stevearc/conform.nvim",
+        opts = {
+            formatters_by_ft = {
+                lua = { "stylua" },
+                python = { "black" },
+                c = { "clang_format" },
+                cpp = { "clang_format" },
+                sh = { "shfmt" },
+                rust = { "rustfmt" },
+            },
+            format_on_save = {
+                timeout_ms = 1000,
+                lsp_fallback = true,
+            },
+        },
+    },
+    { "pechorin/any-jump.vim" },
+    { "nvim-lualine/lualine.nvim" },
+    { "folke/which-key.nvim" },
+    { "numToStr/Comment.nvim" },
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^6",
+        lazy = false,
+    },
+    { "m4xshen/autoclose.nvim" },
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+    },
+    { "tikhomirov/vim-glsl" },
+    { "tadmccorkle/markdown.nvim" },
+    { "lervag/vimtex" },
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp",
+    },
+    { "stevearc/dressing.nvim" },
+    {
+        "ziontee113/icon-picker.nvim",
+        config = function()
+            require("icon-picker").setup({
+                disable_legacy_commands = true,
+            })
+        end,
+    },
+    -- Waiting for lspconfig dependency to be resolved
+    -- {
+    --     "Julian/lean.nvim",
+    --     ft = "lean",
+    --     dependencies = {
+    --         "neovim/nvim-lspconfig",
+    --         "nvim-lua/plenary.nvim",
+    --     },
+    --     config = function()
+    --         require("lean").setup({
+    --             mappings = true,
+    --         })
+    --     end,
+    -- },
+    {
+        "chomosuke/typst-preview.nvim",
+        lazy = false,
+        version = "1.*",
+        opts = {},
+    },
+    { "RaafatTurki/hex.nvim" },
 })
