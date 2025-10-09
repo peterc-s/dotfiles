@@ -81,40 +81,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
 vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
 
--- Open bacon terminal when in a Rust project
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "rust",
-    group = vim.api.nvim_create_augroup("rust_bacon_terminal", { clear = true }),
-    callback = function()
-        local cargo_file = vim.fn.findfile("Cargo.toml", ".;")
-        if cargo_file == "" then
-            return
-        end
-
-        local terms = require("toggleterm.terminal").get_all()
-        for _, term in pairs(terms) do
-            if term.cmd == "bacon" then
-                return
-            end
-        end
-
-        local Terminal = require("toggleterm.terminal").Terminal
-        local bacon = Terminal:new({
-            cmd = "bacon",
-            direction = "vertical",
-            close_on_exit = false,
-            auto_scroll = true,
-            start_in_insert = false,
-            on_open = function(term)
-                vim.cmd("wincmd p")
-                vim.cmd("stopinsert")
-            end,
-        })
-        bacon:open()
-    end,
-    desc = "Open bacon terminal for Rust projects",
-})
-
 -- Keymap to manually toggle the bacon terminal
 vim.keymap.set("n", "<leader>b", function()
     local terms = require("toggleterm.terminal").get_all()
@@ -131,6 +97,7 @@ vim.keymap.set("n", "<leader>b", function()
         close_on_exit = false,
         auto_scroll = true,
         start_in_insert = false,
+        count = 10,
         on_open = function(term)
             vim.cmd("wincmd p")
             vim.cmd("stopinsert")
