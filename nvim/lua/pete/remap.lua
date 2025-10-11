@@ -1,6 +1,10 @@
 -- other remaps exist in plugin config file!
 
--- LSP keymaps
+-- ===============
+-- LSP
+-- ===============
+
+-- Only on LSP attach
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach_keymaps", { clear = true }),
     callback = function(args)
@@ -34,9 +38,40 @@ vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP: Set up keymaps",
 })
 
+-- ===============
+-- Navigation
+-- ===============
+
+-- Centred scrolling/jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- leap.nvim binds
+vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
+vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
+
+-- AnyJump
+vim.keymap.set("n", "<leader>j", ":AnyJump<CR>")
+vim.keymap.set("v", "<leader>j", ":AnyJumpVisual<CR>")
+vim.keymap.set("n", "<leader>ab", ":AnyJumpBack<CR>")
+vim.keymap.set("n", "<leader>al", ":AnyJumpLastResults<CR>")
+
+-- ===============
+-- File Management
+-- ===============
+
 -- Open file explorer
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Explore)
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>")
+
+-- Make file executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- ===============
+-- Editing
+-- ===============
 
 -- Move lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -48,63 +83,98 @@ vim.keymap.set("n", "J", function()
     return "mz" .. count .. "J`z"
 end, { expr = true })
 
--- Centred scrolling/jumping
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 -- Paste without yanking deleted text
 vim.keymap.set("x", "<leader>p", '"_dP')
+
+-- Delete without yanking
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
+
+-- Search and replace under cursor
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>")
+
+-- ===============
+-- Clipboard
+-- ===============
 
 -- System clipboard
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
--- Delete without yanking
-vim.keymap.set("n", "<leader>d", '"_d')
-vim.keymap.set("v", "<leader>d", '"_d')
+-- ===============
+-- Build & Terminal
+-- ===============
 
 -- Shell
 vim.keymap.set("n", "Q", "<nop>")
 vim.api.nvim_set_keymap("n", "Q", "!!$SHELL<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "!!figlet<CR>", { noremap = true })
 
--- Search and replace under cursor
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>")
-
--- Make file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- leap.nvim binds
-vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
-vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
-
--- Keymap to manually toggle the bacon terminal
+-- Keymap to toggle file-type specific terminal
 vim.keymap.set("n", "<leader>b", function()
+    local ft = vim.bo.filetype
+
+    local ft_configs = {
+        rust = {
+            cmd = "bacon",
+            direction = "vertical",
+        },
+        typst = {
+            cmd = "typst watch " .. vim.fn.expand("%:p"),
+            direction = "horizontal",
+        },
+    }
+
+    local config = ft_configs[ft]
+    if not config then
+        vim.notify("No build command configured for filetype: " .. ft, vim.log.levels.WARN)
+        return
+    end
+
+    local cmd = config.cmd
+
     local terms = require("toggleterm.terminal").get_all()
     for _, term in pairs(terms) do
-        if term.cmd == "bacon" then
+        if term.cmd == cmd then
             term:shutdown()
             return
         end
     end
+
     local Terminal = require("toggleterm.terminal").Terminal
-    local bacon = Terminal:new({
-        cmd = "bacon",
-        direction = "vertical",
+    local term = Terminal:new({
+        cmd = cmd,
+        direction = config.direction,
         close_on_exit = true,
         auto_scroll = true,
         start_in_insert = false,
         count = 10,
-        on_open = function(term)
+        on_open = function(t)
             vim.cmd("wincmd p")
             vim.cmd("stopinsert")
         end,
     })
-    bacon:open()
-end, { desc = "Toggle bacon terminal" })
+    term:open()
+end, { desc = "Toggle filetype-specific build terminal" })
+
+-- ===============
+-- Git
+-- ===============
+
+-- Fugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- ===============
+-- Utilities
+-- ===============
+
+-- UndoTree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- ===============
+-- Other
+-- ===============
 
 -- stop using these :)
 vim.keymap.set("n", "<Up>", "<Nop>", { noremap = true })

@@ -20,7 +20,7 @@ function _G.toggle_wrap_settings()
         vim.opt.number = true
         vim.opt.textwidth = 100
         vim.opt.wrapmargin = 0
-        vim.opt.formatoptions:append('t')
+        vim.opt.formatoptions:append("t")
         vim.opt.linebreak = true
     else
         -- restore original settings
@@ -32,9 +32,4 @@ function _G.toggle_wrap_settings()
     end
 end
 
-vim.keymap.set(
-    'n',
-    '<leader>tw',
-    '<cmd>lua toggle_wrap_settings()<CR>',
-    { noremap = true, silent = true }
-)
+vim.keymap.set("n", "<leader>tw", "<cmd>lua toggle_wrap_settings()<CR>", { noremap = true, silent = true })

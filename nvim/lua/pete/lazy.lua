@@ -25,13 +25,17 @@ require("lazy").setup({
         tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
-    { "navarasu/onedark.nvim" },
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "master",
+        lazy = false,
         build = ":TSUpdate",
     },
     { "nvim-treesitter/playground" },
-    { "ThePrimeagen/harpoon" },
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
     { "mbbill/undotree" },
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -41,21 +45,26 @@ require("lazy").setup({
     { "saadparwaiz1/cmp_luasnip" },
     { "stevearc/conform.nvim" },
     { "pechorin/any-jump.vim" },
-    { "nvim-lualine/lualine.nvim" },
+    { "nvim-lualine/lualine.nvim", opts = {} },
     { "folke/which-key.nvim" },
-    { "numToStr/Comment.nvim" },
+    { "numToStr/Comment.nvim", opts = {} },
     {
         "mrcjkb/rustaceanvim",
         version = "^6",
         lazy = false,
     },
-    { "m4xshen/autoclose.nvim" },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {},
+    },
     {
         "kylechui/nvim-surround",
         version = "*",
+        opts = {},
     },
     { "tikhomirov/vim-glsl" },
-    { "tadmccorkle/markdown.nvim" },
+    { "tadmccorkle/markdown.nvim", opts = {} },
     { "lervag/vimtex" },
     {
         "norcalli/nvim-colorizer.lua",
@@ -67,6 +76,7 @@ require("lazy").setup({
         "L3MON4D3/LuaSnip",
         version = "v2.*",
         build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
     },
     { "stevearc/dressing.nvim" },
     {
@@ -97,15 +107,54 @@ require("lazy").setup({
         version = "1.*",
         opts = {},
     },
-    { "RaafatTurki/hex.nvim" },
+    { "RaafatTurki/hex.nvim", opts = {} },
     {
         "stevearc/oil.nvim",
         dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+        opts = {
+            view_options = {
+                show_hidden = true,
+            },
+        },
         lazy = false,
     },
     { "ggandor/leap.nvim" },
     { "tpope/vim-sleuth" },
-    { "lukas-reineke/indent-blankline.nvim" },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        version = "*",
+        opts = {
+            scope = { enabled = false },
+            indent = { char = "┊" },
+        },
+        main = "ibl",
+    },
     { "hiphish/rainbow-delimiters.nvim" },
-    { "akinsho/toggleterm.nvim", version = "*", config = true },
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        config = true,
+        opts = {
+            open_mapping = "<C-\\>",
+            -- fix for weird 8-column verticals
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return 20
+                elseif term.direction == "vertical" then
+                    return 80
+                end
+            end,
+        },
+    },
+    { "lewis6991/gitsigns.nvim", opts = {} },
+    {
+        "navarasu/onedark.nvim",
+        priority = 1000,
+        config = function()
+            require("onedark").setup({
+                transparent = true,
+            })
+            require("onedark").load()
+        end,
+    },
 })

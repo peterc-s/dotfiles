@@ -62,7 +62,7 @@ bindswitch lid:on exec $lock_cmd
 ### Input configuration
 input * {
 	xkb_layout "gb"
-	xkb_options caps:backspace
+	xkb_options caps:escape
 }
 
 ### Key bindings
