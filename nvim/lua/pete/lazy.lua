@@ -155,6 +155,12 @@ require("lazy").setup({
                 transparent = true,
             })
             require("onedark").load()
+
+            -- Fix harpoon tab bar
+            vim.api.nvim_set_hl(0, "HarpoonInactive", { fg = "#abb2bf", bg = "NONE" })
+            vim.api.nvim_set_hl(0, "HarpoonActive", { fg = "#abb2bf", bg = "#484c54", bold = true })
+            vim.api.nvim_set_hl(0, "HarpoonNumberActive", { fg = "#abb2bf", bg = "#484c54", bold = true })
+            vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = "#abb2bf", bg = "NONE" })
         end,
     },
 })
