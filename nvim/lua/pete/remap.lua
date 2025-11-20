@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         -- Documentation
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- Show hover info
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Show signature help
+        -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Show signature help
 
         -- Code actions
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- Code actions

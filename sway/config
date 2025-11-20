@@ -150,8 +150,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus scratchpad show
+bindsym $mod+minus move scratchpad
 
 ### Resize
 bindsym $mod+r mode "resize"

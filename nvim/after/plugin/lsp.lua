@@ -3,6 +3,19 @@ local luasnip = require("luasnip")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 ---- LSPs
+
+-- TypeScript & JavaScript
+vim.lsp.config("tsserver", {
+    cmd = { "typescript-language-server", "--stdio" },
+    root_markers = { "tsconfig.json", "jsconfig.json", ".git" },
+    filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+    capabilities = capabilities,
+    settings = {
+        documentFormatting = true,
+    },
+})
+vim.lsp.enable("tsserver")
+
 -- Lua
 vim.lsp.config("lua_ls", {
     cmd = { "lua-language-server" },
@@ -101,6 +114,23 @@ vim.lsp.config("pyright", {
 })
 vim.lsp.enable("pyright")
 
+-- typst
+vim.lsp.config("tinymist", {
+    cmd = { "tinymist" },
+    root_markers = {
+        "main.typ",
+        "lib.typ",
+    },
+    filetypes = { "typst" },
+    capabilities = capabilities,
+    settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onType",
+        semanticTokens = "disable",
+    },
+})
+vim.lsp.enable("tinymist")
+
 -- Disable Ruff hover
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
@@ -125,6 +155,7 @@ require("conform").setup({
         cpp = { "clang_format" },
         sh = { "shfmt" },
         rust = { "rustfmt" },
+        -- typst = { "tinymist" },
     },
     format_on_save = {
         timeout_ms = 1000,
