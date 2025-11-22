@@ -77,8 +77,13 @@ vim.lsp.config("bashls", {
 vim.lsp.enable("bashls")
 
 -- Python
-vim.lsp.config("ty", {})
-vim.lsp.enable("ty")
+-- vim.lsp.config("ty", {
+--     cmd = { "ty", "server" },
+--     root_markers = { "pyproject.toml", ".git" },
+--     filetypes = { "python" },
+--     capabilities = capabilities,
+-- })
+-- vim.lsp.enable("ty")
 
 vim.lsp.config("ruff", {
     cmd = { "ruff", "server" },
@@ -104,11 +109,6 @@ vim.lsp.config("pyright", {
     settings = {
         pyright = {
             disableOrganizeImports = true,
-        },
-        python = {
-            analysis = {
-                ignore = { "*" },
-            },
         },
     },
 })
