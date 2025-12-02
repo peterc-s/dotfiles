@@ -125,8 +125,8 @@ vim.lsp.config("tinymist", {
     capabilities = capabilities,
     settings = {
         formatterMode = "typstyle",
-        exportPdf = "onType",
-        semanticTokens = "disable",
+        -- semanticTokens = "disable",
+        lint = { enabled = true, when = "onSave" },
     },
 })
 vim.lsp.enable("tinymist")
