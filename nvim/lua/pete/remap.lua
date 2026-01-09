@@ -109,7 +109,6 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 -- Shell
 vim.keymap.set("n", "Q", "<nop>")
 vim.api.nvim_set_keymap("n", "Q", "!!$SHELL<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "F", "!!figlet<CR>", { noremap = true })
 
 -- Keymap to toggle file-type specific terminal
 vim.keymap.set("n", "<leader>b", function()
