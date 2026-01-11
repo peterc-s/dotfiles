@@ -1,0 +1,112 @@
+add_newline = false
+command_timeout = 1000
+format = """$env_var$os $all$character"""
+right_format = """$cmd_duration $time"""
+
+[line_break]
+disabled = true
+
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](white)'
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+[username]
+style_user = "green"
+style_root = "red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@](purple)[$hostname](blue) "
+disabled = false
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+truncation_symbol = "../"
+home_symbol = "~"
+read_only_style = "197"
+read_only = "  "
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+truncation_symbol = "…/"
+style = "bold green"
+
+[git_status]
+format = '[$all_status$combined$ahead_behind]($style)'
+style = "bold green"
+conflicted = "[~${count}](red) "
+up_to_date = ""
+untracked = "[?${count}](fg:12) "
+ahead = "⇡${count} "
+diverged = "⇣${behind_count}⇡${ahead_count} "
+behind = "⇣${count} "
+stashed = "[*$count](fg:10) "
+modified = "[!$count](fg:11) "
+staged = "[+$count](green) "
+renamed = "[=$count](green) "
+deleted = "[<$count](fg:11) "
+
+[kubernetes]
+format = '[ﴱ $context\($namespace\)](bold purple) '
+disabled = false
+
+[terraform]
+format = "[ terraform $version]($style) 壟 [$workspace]($style) "
+disabled = true
+
+[vagrant]
+format = "[ vagrant $version]($style) "
+disabled = true
+
+[docker_context]
+format = "[ $context](bold blue) "
+disabled = true
+
+[helm]
+format = "[ $version](bold purple) "
+disabled = true
+
+[python]
+symbol = ""
+format = "[($symbol $virtualenv )]($style)"
+python_binary = "python"
+detect_files = []
+disabled = false
+
+[rust]
+disabled = true
+
+[package]
+disabled = true
+
+[nodejs]
+format = "[ $version](bold green) "
+disabled = true
+
+[ruby]
+format = "[ $version]($style) "
+disabled = true
+
+[c]
+disabled = true
+
+[os]
+disabled = false
+
+[os.symbols]
+Arch = ""
+NixOS = "󱄅"
+
+[cmd_duration]
+format = "[$duration]($style)"
+
+[time]
+format = "[$time](fg:241)"
+disabled = false
