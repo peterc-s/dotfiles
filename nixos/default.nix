@@ -15,6 +15,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # fonts
+  environment.systemPackages = with pkgs; [
+    meslo-lgs-nf
+    nerd-fonts.fira-code
+    nerd-fonts.meslo-lg
+  ];
 
   users.users.pete = {
     isNormalUser = true;
