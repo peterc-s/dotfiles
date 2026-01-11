@@ -14,9 +14,10 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings.extra-experimental-features = [ "nix-command" ];
 
   # fonts
-  environment.systemPackages = with pkgs; [
+  fonts.packages = with pkgs; [
     meslo-lgs-nf
     nerd-fonts.fira-code
     nerd-fonts.meslo-lg
