@@ -20,6 +20,7 @@
 
     # other
     ./modules/software/gaming.nix
+    ./modules/software/uni.nix
   ];
 
   # device specific stuff
