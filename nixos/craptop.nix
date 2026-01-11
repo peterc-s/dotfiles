@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz;
+in
 {
+  imports =
+  [
+    (import "${home-manager}/nixos")
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -105,6 +113,8 @@
     librewolf
     kitty
     wl-clipboard
+    gnumake
+    gcc
   ];
 
   programs.neovim = {
@@ -122,6 +132,20 @@
         email = "petercs@purelymail.com";
         name = "peterc-s";
       };
+    };
+  };
+
+
+  home-manager.users.pete = { config, pkgs, ... }: {
+    home.stateVersion = "25.11";
+
+    # Use sway config
+    xdg.configFile."sway/config".source = /home/pete/dotfiles/sway/config;
+
+    # Other configs
+    home.file = {
+      ".config/waybar".source = ../waybar;
+      ".config/nvim".source = ../nvim;
     };
   };
 
