@@ -21,9 +21,13 @@ fi
 # bootstrap nix config
 cat "$nixcfg_template" | sed "s/{{HOSTNAME}}/$set_hostname/" | sudo tee "/etc/nixos/configuration.nix" > /dev/null
 
-# move scripts
+# symlink
 mkdir -p $local_bin
-cp $script_dir/rb* $local_bin
+for script in "$script_dir"/rb*; do
+  if [ -f "$script" ]; then
+    ln -sf "$script" "$local_bin"/
+  fi
+done
 
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch &>"$nixos_switch_log" || (cat "$nixos_switch_log" | grep --color error && exit 1)

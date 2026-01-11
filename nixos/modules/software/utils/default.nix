@@ -13,5 +13,6 @@
     exiftool
     binwalk
     ripgrep
+    file
   ];
 }
