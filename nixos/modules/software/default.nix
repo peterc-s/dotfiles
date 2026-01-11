@@ -18,6 +18,7 @@
     starship
     zoxide
     libnotify
+    mupdf
   ];
 
   programs.git = {
