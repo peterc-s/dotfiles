@@ -14,6 +14,7 @@
     yubikey-manager
     starship
     zoxide
+    libnotify
   ];
 
   programs.git = {

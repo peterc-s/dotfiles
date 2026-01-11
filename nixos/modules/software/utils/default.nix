@@ -7,5 +7,6 @@
     tree
     wl-clipboard
     wayclip
+    jq
   ];
 }

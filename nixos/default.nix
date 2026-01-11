@@ -14,7 +14,8 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.extra-experimental-features = [ "nix-command" ];
+  nix.settings.extra-experimental-features = ["nix-command"];
+  environment.localBinInPath = true;
 
   # fonts
   fonts.packages = with pkgs; [
