@@ -15,5 +15,8 @@
     dotfilesDir = "${config.home.homeDirectory}/dotfiles";
   in {
     home.stateVersion = "25.11";
+
+    services.gnome-keyring.enable = true;
+    home.packages = [pkgs.gcr];
   };
 }
