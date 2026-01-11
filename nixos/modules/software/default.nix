@@ -15,6 +15,7 @@
     starship
     zoxide
     libnotify
+    dunst
   ];
 
   programs.git = {

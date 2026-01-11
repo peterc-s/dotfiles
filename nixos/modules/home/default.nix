@@ -34,6 +34,7 @@ in {
       ".config/rofi".source = "${dotfilesDir}/rofi";
       ".config/kitty".source = "${dotfilesDir}/kitty";
       ".config/starship.toml".source = "${dotfilesDir}/starship/starship.toml";
+      ".config/dunst".source = "${dotfilesDir}/dunst";
     };
   };
 }
