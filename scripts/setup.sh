@@ -21,13 +21,17 @@ fi
 # bootstrap nix config
 cat "$nixcfg_template" | sed "s/{{HOSTNAME}}/$set_hostname/" | sudo tee "/etc/nixos/configuration.nix" > /dev/null
 
-# symlink
+# symlink scripts
 mkdir -p $local_bin
 for script in "$script_dir"/rb*; do
   if [ -f "$script" ]; then
     ln -sf "$script" "$local_bin"/
   fi
 done
+
+# setup home-manager channel
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
+sudo nix-channel --update
 
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch &>"$nixos_switch_log" || (cat "$nixos_switch_log" | grep --color error && exit 1)

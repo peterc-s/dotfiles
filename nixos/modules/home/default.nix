@@ -3,11 +3,10 @@
   pkgs,
   ...
 }: let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz;
   dotfilesDir = "${config.home.homeDirectory}/dotfiles";
 in {
   imports = [
-    (import "${home-manager}/nixos")
+    <home-manager/nixos>
   ];
 
   home-manager.users.pete = {

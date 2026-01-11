@@ -3,9 +3,12 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./communication/vesktop.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     gamemode
-    vesktop
   ];
 
   programs.steam = {
