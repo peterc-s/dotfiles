@@ -32,6 +32,7 @@ in {
     home.file = {
       ".config/waybar".source = "${dotfilesDir}/waybar";
       ".config/nvim".source = "${dotfilesDir}/nvim";
+      ".config/rofi".source = "${dotfilesDir}/rofi";
       ".config/starship.toml".source = "${dotfilesDir}/starship/starship.toml";
     };
   };
