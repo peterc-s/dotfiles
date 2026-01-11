@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+$EDITOR "$HOME/dotfiles/nixos"
+$HOME/.local/bin/rb

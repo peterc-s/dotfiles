@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -e
+
+pushd ~/dotfiles/nixos/
+
+# early return if no changes were detected
+if git diff --quiet '*.nix'; then
+    echo "No changes detected, exiting."
+    popd
+    exit 0
+fi
+
+# format
+alejandra . &>/dev/null \
+  || ( alejandra . ; echo "formatting failed!" && exit 1)
+
+git diff -U0 '*.nix'
+
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+current=$(nixos-rebuild list-generations --json | jq '.[] | select (.current == true) | "\(.generation) \(.date) \(.nixosVersion) \(.kernelVersion)"')
+git add --all
+git commit -m "$current"
+
+popd
+
+notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
