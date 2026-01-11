@@ -8,5 +8,10 @@
     wl-clipboard
     wayclip
     jq
+    fzf
+    timg
+    exiftool
+    binwalk
+    ripgrep
   ];
 }
