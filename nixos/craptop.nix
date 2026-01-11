@@ -17,6 +17,9 @@
     ./modules/software/programming/c.nix
     ./modules/software/programming/rust.nix
     ./modules/software/programming/python.nix
+
+    # other
+    ./modules/software/gaming.nix
   ];
 
   # device specific stuff
