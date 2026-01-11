@@ -2,12 +2,12 @@
   config,
   pkgs,
   ...
-}: let
-  dotfilesDir = "${config.home.homeDirectory}/dotfiles";
-in {
+}: {
   imports = [
     <home-manager/nixos>
   ];
+
+  # set dotfiles directory
 
   home-manager.users.pete = {
     config,
@@ -18,9 +18,6 @@ in {
   in {
     home.stateVersion = "25.11";
 
-    # Use sway config
-    xdg.configFile."sway/config".source = "${dotfilesDir}/sway/config";
-
     xdg.configFile.fish = {
       source = "${dotfilesDir}/fish";
       recursive = true;
@@ -28,12 +25,9 @@ in {
 
     # Other configs
     home.file = {
-      ".config/waybar".source = "${dotfilesDir}/waybar";
       ".config/nvim".source = "${dotfilesDir}/nvim";
-      ".config/rofi".source = "${dotfilesDir}/rofi";
       ".config/kitty".source = "${dotfilesDir}/kitty";
       ".config/starship.toml".source = "${dotfilesDir}/starship/starship.toml";
-      ".config/dunst".source = "${dotfilesDir}/dunst";
     };
   };
 }
