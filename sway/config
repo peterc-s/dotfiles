@@ -12,6 +12,7 @@ set $right l
 set $term kitty
 set $explorer nemo
 set $lock_cmd swaylock \
+	--image /home/pete/Drive/Pictures/wlfgrl.png \
 	--indicator-radius 25 \
 	--indicator-thickness 5 \
 	--ring-color 373B41 \
@@ -29,6 +30,7 @@ set $browser librewolf
 set $mute_mic_cmd pulsemixer --list-sources | rg -i "mic" | cut -f3 | cut -d "," -f1 | cut -c 6- | xargs -L1 pulsemixer --toggle-mute --id
 
 ### Output configuration
+output * bg /home/pete/Drive/Pictures/wlfgrl.png fill
 # output eDP-1 position 0,1080
 # output HDMI-A-1 position 0,0
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
