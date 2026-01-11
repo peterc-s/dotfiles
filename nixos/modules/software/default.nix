@@ -9,10 +9,10 @@
     ./fish.nix
     ./kitty.nix
     ./neovim.nix
+    ./librewolf.nix
   ];
 
   environment.systemPackages = with pkgs; [
-    librewolf
     kitty
     yubikey-manager
     starship
