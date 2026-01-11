@@ -13,6 +13,7 @@
       swaylock-effects
       rofi
       waybar
+      wl-mirror
     ];
   };
 }
