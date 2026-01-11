@@ -4,6 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    dua
     tealdeer
     tree
     wl-clipboard
