@@ -4,13 +4,6 @@ set -e
 
 pushd ~/dotfiles/nixos/
 
-# early return if no changes were detected
-if git diff --quiet '*.nix'; then
-    echo "No changes detected, exiting."
-    popd
-    exit 0
-fi
-
 # format
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)

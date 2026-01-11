@@ -22,6 +22,7 @@
     # other
     ./modules/software/gaming.nix
     ./modules/software/uni.nix
+    ./modules/software/syncthing.nix
   ];
 
   # device specific stuff
