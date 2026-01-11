@@ -7,5 +7,6 @@
     typst
     typstyle
     tinymist
+    websocat
   ];
 }
