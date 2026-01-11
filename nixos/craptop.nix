@@ -8,6 +8,7 @@
 
     # system
     ./modules/system/auto-update.nix
+    ./modules/system/plymouth.nix
 
     # graphical environment
     ./modules/display-manager/ly.nix
