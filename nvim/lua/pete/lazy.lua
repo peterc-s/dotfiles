@@ -105,12 +105,7 @@ require("lazy").setup({
         "chomosuke/typst-preview.nvim",
         lazy = false,
         version = "1.*",
-        opts = {
-            dependencies_bin = {
-                ["tinymist"] = "/run/current-system/sw/bin/tinymist"  
-                ["websocat"] = "/run/current-system/sw/bin/websocat"  
-            },
-        },
+        opts = {},
     },
     { "RaafatTurki/hex.nvim", opts = {} },
     {
