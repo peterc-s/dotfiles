@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-$EDITOR "$HOME/dotfiles/nixos/modules/software"
-$HOME/.local/bin/rb
