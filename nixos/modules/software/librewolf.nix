@@ -3,40 +3,38 @@
   pkgs,
   ...
 }: {
-  imports = [<home-manager/nixos>];
-
-  environment.systemPackages = with pkgs; [
-    librewolf
-  ];
-
-  # use dotfiles
-  home-manager.users.pete = {
-    config,
-    pkgs,
-    ...
-  }: {
-    programs.librewolf.profiles.default = {pkgs, ...}: let
-      moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
-    in {
-      id = 0;
-      isDefault = true;
-      name = "Default";
-
-      extensions = {
-        "*".installation_mode = "blocked";
-
+  programs.firefox = {
+    enable = true;
+    package = pkgs.librewolf;
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      ExtensionSettings = {
+        # uBlock Origin
         "uBlock0@raymondhill.net" = {
-          install_url = moz "ublock-origin";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
-          updates_disabled = false;
         };
-
-        # bitwarden
+        # BitWarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-          install_url = moz "bitwarden-password-manager";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
           installation_mode = "force_installed";
-          updates_disabled = false;
         };
+      };
+      FirefoxHome = {
+        "Search" = false;
+      };
+      HardwareAcceleration = true;
+      Preferences = {
+        "browser.preferences.defaultPerformanceSettings.enabled" = false;
+        "browser.startup.homepage" = "about:home";
+        "browser.toolbar.bookmarks.visibility" = "newtab";
+        "browser.toolbars.bookmarks.visibility" = "newtab";
+        "browser.warnOnQuit" = false;
+        "browser.warnOnQuitShortcut" = false;
+        "places.history.enabled" = "false";
+        "privacy.resistFingerprinting" = true;
+        "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
       };
     };
   };
