@@ -19,6 +19,7 @@
     zoxide
     libnotify
     mupdf
+    gh
   ];
 
   programs.git = {
