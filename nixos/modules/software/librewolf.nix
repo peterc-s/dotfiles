@@ -15,22 +15,28 @@
     pkgs,
     ...
   }: {
-    programs.librewolf.profiles.pete.extensions = {pkgs, ...}: let
+    programs.librewolf.profiles.default = {pkgs, ...}: let
       moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
     in {
-      "*".installation_mode = "blocked";
+      id = 0;
+      isDefault = true;
+      name = "Default";
 
-      "uBlock0@raymondhill.net" = {
-        install_url = moz "ublock-origin";
-        installation_mode = "force_installed";
-        updates_disabled = false;
-      };
+      extensions = {
+        "*".installation_mode = "blocked";
 
-      # bitwarden
-      "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-        install_url = moz "bitwarden-password-manager";
-        installation_mode = "force_installed";
-        updates_disabled = false;
+        "uBlock0@raymondhill.net" = {
+          install_url = moz "ublock-origin";
+          installation_mode = "force_installed";
+          updates_disabled = false;
+        };
+
+        # bitwarden
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          install_url = moz "bitwarden-password-manager";
+          installation_mode = "force_installed";
+          updates_disabled = false;
+        };
       };
     };
   };
