@@ -14,7 +14,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.extra-experimental-features = ["nix-command"];
+  nix.settings.extra-experimental-features = ["nix-command" "flakes"];
   environment.localBinInPath = true;
 
   # fonts
