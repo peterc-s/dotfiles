@@ -106,6 +106,7 @@ in  {
   # programs
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    gamemode
     btop
     croc
     home-manager
@@ -243,6 +244,12 @@ in  {
       dates = "daily";
       extraArgs = "--keep-since 14d --keep 3";
     };
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
   fonts.packages = with pkgs; [
