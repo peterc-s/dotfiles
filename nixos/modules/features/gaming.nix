@@ -1,9 +1,9 @@
 {
   config,
-    lib,
-    pkgs,
-    inputs,
-    ...
+  lib,
+  pkgs,
+  inputs,
+  ...
 }: {
   programs = {
     gamemode.enable = true;
@@ -24,4 +24,3 @@
     };
   };
 }
-

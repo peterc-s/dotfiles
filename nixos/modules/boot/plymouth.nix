@@ -15,5 +15,5 @@
       "systemd.show_status=auto"
     ];
     loader.timeout = 0;
-  }
+  };
 }

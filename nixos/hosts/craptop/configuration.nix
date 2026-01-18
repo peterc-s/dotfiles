@@ -28,7 +28,7 @@ in {
     ../../modules/sw/fish.nix
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
-    
+
     # features
     ../../modules/features/gaming.nix
     ../../modules/features/common-software.nix
@@ -52,7 +52,7 @@ in {
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [];
 
   system.stateVersion = "25.11"; # don't change without looking up
 }
