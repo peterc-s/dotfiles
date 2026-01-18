@@ -1,10 +1,14 @@
 # My Dotfiles
-For use with NixOS:
-```sh
-./scripts/setup.sh <hostname>
-```
+WIP config.
 
-This will:
-- Bootstrap `/etc/nixos/configuration.nix` (**this will delete the old configuration.nix**)
-- Copy over some useful scripts for rebuilding into `~/.local/bin/`
-- Rebuild
+TODO before switch:
+- [ ] modularise setup for use between laptops and pcs
+- [ ] figure out a streamlined installation method for better portability
+- [ ] start moving configs over to nix where possible
+- [ ] clamav?
+- [ ] firejail?
+- [ ] apparmour?
+- [ ] librewolf:
+    - [ ] get bitwarden installing properly
+    - [ ] add bookmarks to useful things?
+- [ ] gaming stuff
