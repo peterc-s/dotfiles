@@ -3,15 +3,14 @@ WIP config.
 
 TODO before switch:
 - [ ] modularise setup for use between laptops and pcs
+    - [x] initial modularisation
+    - [ ] figure out how to only home manager configure software if it is currently enabled
 - [ ] figure out a streamlined installation method for better portability
 - [ ] start moving configs over to nix where possible
-- [ ] clamav?
-- [ ] firejail?
-- [ ] apparmour?
 - [ ] librewolf:
     - [ ] get bitwarden installing properly
     - [ ] add bookmarks to useful things?
-- [ ] gaming stuff
+- [x] gaming stuff
 - [x] auto GC + auto updates
 - [ ] maybe try unstable?
 - [ ] figure out why neovim tinymist keeps reinstalling

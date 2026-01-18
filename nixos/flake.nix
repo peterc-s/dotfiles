@@ -15,22 +15,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    disko,
+    home-manager,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
-  in  {
+  in {
     nixosConfigurations.craptop = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         disko.nixosModules.disko
-        ./configuration.nix
-        ./disk-config.nix
+        ./hosts/craptop/configuration.nix
+        ./hosts/craptop/disk-config.nix
       ];
     };
 
     homeConfigurations.pete = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ../home-manager/home.nix ];
+      modules = [../home-manager/home.nix];
     };
   };
 }
