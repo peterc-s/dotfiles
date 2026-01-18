@@ -12,5 +12,6 @@ TODO before switch:
     - [ ] get bitwarden installing properly
     - [ ] add bookmarks to useful things?
 - [ ] gaming stuff
-- [ ] auto GC + auto updates
+- [x] auto GC + auto updates
 - [ ] maybe try unstable?
+- [ ] figure out why neovim tinymist keeps reinstalling

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: let
   hostName = "craptop";
@@ -237,8 +238,11 @@ in  {
 
   programs.nh = {
     enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 7d --keep 3";
+    clean = {
+      enable = true;
+      dates = "daily";
+      extraArgs = "--keep-since 14d --keep 3";
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -248,6 +252,16 @@ in  {
   ];
 
   security.rtkit.enable = true;
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--print-build-logs"
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
 
   system.stateVersion = "25.11"; # don't change without looking up
 }
