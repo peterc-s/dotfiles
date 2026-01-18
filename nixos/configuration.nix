@@ -171,11 +171,17 @@
     };
   };
 
-  programs.fish = {
+  programs.fish = let
+    flakePath = "~/dotfiles/nixos/";
+  in {
     enable = true;
     interactiveShellInit = ''
       set -U fish_greeting
     '';
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake ${flakePath}";
+      hms = "home-manager switch --flake ${flakePath}";
+    };
   };
 
   programs.zoxide = {
