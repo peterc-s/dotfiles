@@ -26,4 +26,7 @@
       hms = "NH_HOME_FLAKE=${flakePath} nh home switch";
     };
   };
+
+  # disable if completion is weird but stops long rebuilds
+  documentation.man.generateCaches = false;
 }
