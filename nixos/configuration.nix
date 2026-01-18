@@ -232,6 +232,13 @@
     };
   };
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+    flake = "/home/pete/dotfiles/nixos";
+  };
+
   fonts.packages = with pkgs; [
     meslo-lgs-nf
     nerd-fonts.fira-code
