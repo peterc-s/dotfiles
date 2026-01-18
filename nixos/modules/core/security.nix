@@ -21,7 +21,7 @@
   environment.memoryAllocator.provider = "graphene-hardened";
   users.groups.netdev = {};
   services = {
-    dbus.implementation = "broker";
+    # dbus.implementation = "broker";
     logrotate.enable = true;
     journald = {
       storage = "volatile";
