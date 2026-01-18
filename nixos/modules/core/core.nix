@@ -13,5 +13,6 @@
     ./auto-update.nix
     ./fonts.nix
     ./security.nix
+    ./cpu.nix
   ];
 }
