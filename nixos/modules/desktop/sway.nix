@@ -10,6 +10,8 @@
     extraPackages = with pkgs; [
       brightnessctl
       grim
+      wl-clipboard
+      wayclip
       slurp
       swayidle
       swaylock-effects

@@ -12,6 +12,7 @@ in {
 
     # bootloader
     ../../modules/boot/grub.nix
+    ../../modules/boot/plymouth.nix
 
     # dm
     ../../modules/display-manager/ly.nix
@@ -27,6 +28,11 @@ in {
     ../../modules/sw/fish.nix
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
+    
+    # features
+    ../../modules/features/gaming.nix
+    ../../modules/features/common-software.nix
+    ../../modules/features/development.nix
   ];
 
   # use latest kernel
@@ -46,54 +52,7 @@ in {
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [
-    gamemode
-    btop
-    croc
-    home-manager
-    kitty
-    yubikey-manager
-    starship
-    zoxide
-    libnotify
-    mupdf
-    gh
-    dua
-    tealdeer
-    tree
-    wl-clipboard
-    wayclip
-    jq
-    fzf
-    timg
-    exiftool
-    binwalk
-    ripgrep
-    file
-    gnumake
-    gcc
-    cmake
-    alejandra
-    uv
-    python3
-    ruff
-    black
-    pylint
-    pyright
-    ty
-    rustup
-    bacon
-    typst
-    typstyle
-    tinymist
-    websocat
-  ];
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+  environment.systemPackages = with pkgs; [ ];
 
   system.stateVersion = "25.11"; # don't change without looking up
 }

@@ -155,7 +155,8 @@ require("conform").setup({
         cpp = { "clang_format" },
         sh = { "shfmt" },
         rust = { "rustfmt" },
-        -- typst = { "tinymist" },
+        nix = { "alejandra" },
+        typst = { "tinymist" },
     },
     format_on_save = {
         timeout_ms = 1000,

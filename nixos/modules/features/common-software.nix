@@ -1,0 +1,30 @@
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    btop
+    croc
+    home-manager
+    kitty
+    yubikey-manager
+    starship
+    zoxide
+    libnotify
+    mupdf
+    gh
+    dua
+    tealdeer
+    tree
+    jq
+    fzf
+    timg
+    exiftool
+    binwalk
+    ripgrep
+    file
+  ];
+}
