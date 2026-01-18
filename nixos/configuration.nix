@@ -99,11 +99,11 @@
 
   # nix
   nix.settings.extra-experimental-features = ["nix-command" "flakes"];
-  # environment.localBinInPath = true;
 
   # programs
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    btop
     croc
     home-manager
     kitty
