@@ -6,10 +6,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-
-    # disko
-    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-    ./disk-config.nix
   ];
 
   # grub
@@ -237,7 +233,6 @@
   ];
 
   security.rtkit.enable = true;
-  system.copySystemConfiguration = true;
 
   system.stateVersion = "25.11"; # don't change without looking up
 }
