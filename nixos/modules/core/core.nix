@@ -4,7 +4,7 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   imports = [
     ./locale.nix
     ./printing.nix
@@ -15,4 +15,3 @@
     ./security.nix
   ];
 }
-

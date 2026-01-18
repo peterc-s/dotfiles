@@ -4,7 +4,7 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -14,5 +14,3 @@
     # media-session.enable = true;
   };
 }
-
-

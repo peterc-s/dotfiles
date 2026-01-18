@@ -1,21 +1,21 @@
 {
   config,
-    lib,
-    pkgs,
-    inputs,
-    ...
-}:{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   security = {
     rtkit.enable = true;
     polkit.enable = true;
     protectKernelImage = true;
     pam.loginLimits = [
-    {
-      domain = "*"; # all users/sessions
+      {
+        domain = "*"; # all users/sessions
         type = "-"; # both hard/soft
         item = "core";
-      value = "0";
-    }
+        value = "0";
+      }
     ];
   };
   environment.memoryAllocator.provider = "graphene-hardened";
@@ -25,11 +25,11 @@
     logrotate.enable = true;
     journald = {
       storage = "volatile";
-        upload.enable = false;
-        extraConfig = ''
-          SystemMaxUse=500M
-          SystemMaxFileSize=50M
-        '';
+      upload.enable = false;
+      extraConfig = ''
+        SystemMaxUse=500M
+        SystemMaxFileSize=50M
+      '';
     };
   };
 }

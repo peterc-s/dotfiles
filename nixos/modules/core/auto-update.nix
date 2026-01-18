@@ -4,7 +4,7 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   # using nh clean instead of nixos-collect-garbage
   programs.nh = {
     enable = true;

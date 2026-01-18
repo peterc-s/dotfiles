@@ -4,7 +4,7 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   # for kitten diff
   environment.systemPackages = with pkgs; [kitty];
 
@@ -35,5 +35,3 @@
     };
   };
 }
-
-

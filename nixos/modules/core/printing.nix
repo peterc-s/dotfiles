@@ -4,6 +4,6 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   services.printing.enable = true;
 }

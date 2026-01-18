@@ -4,7 +4,7 @@
   pkgs,
   inputs,
   ...
-}:{
+}: {
   imports = [
     ./zoxide.nix
     ./starship.nix
