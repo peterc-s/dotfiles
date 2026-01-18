@@ -3,22 +3,24 @@
   pkgs,
   ...
 }: {
-  home = let
-    dotfilesDir = "/home/pete/dotfiles";
-  in {
+  xdg.configFile.fish = {
+    source = ../fish;
+    recursive = true;
+  };
+
+  home = {
     username = "pete";
     homeDirectory = "/home/pete";
     stateVersion = "25.11";
 
     file = {
-      ".config/sway".source = "${dotfilesDir}/sway";
-      ".config/fish".source = "${dotfilesDir}/fish";
-      ".config/waybar".source = "${dotfilesDir}/waybar";
-      ".config/rofi".source = "${dotfilesDir}/rofi";
-      ".config/dunst".source = "${dotfilesDir}/dunst";
-      ".config/starship.toml".source = "${dotfilesDir}/starship/starship.toml";
-      ".config/kitty".source = "${dotfilesDir}/kitty";
-      ".config/nvim".source = "${dotfilesDir}/nvim";
+      ".config/sway".source = ../sway;
+      ".config/waybar".source = ../waybar;
+      ".config/rofi".source = ../rofi;
+      ".config/dunst".source = ../dunst;
+      ".config/starship.toml".source = ../starship/starship.toml;
+      ".config/kitty".source = ../kitty;
+      ".config/nvim".source = ../nvim;
     };
   };
 }
