@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  hostName = "craptop";
+in  {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -52,7 +54,7 @@
     ];
   };
 
-  networking.hostName = "craptop";
+  networking.hostName = hostName;
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/London";
@@ -177,10 +179,11 @@
     enable = true;
     interactiveShellInit = ''
       set -U fish_greeting
+      set NH_FLAKE ${flakePath}
     '';
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ${flakePath}";
-      hms = "home-manager switch --flake ${flakePath}";
+      sw = "NH_OS_FLAKE=${flakePath} nh os switch";
+      hms = "NH_HOME_FLAKE=${flakePath} nh home switch";
     };
   };
 
@@ -236,7 +239,6 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 3";
-    flake = "/home/pete/dotfiles/nixos";
   };
 
   fonts.packages = with pkgs; [
