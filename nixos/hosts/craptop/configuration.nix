@@ -38,6 +38,8 @@ in {
   # use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  hardware.cpu.intel.updateMicrocode = true;
+
   networking.hostName = hostName;
   networking.networkmanager.enable = true;
 
@@ -52,7 +54,7 @@ in {
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [ ];
 
   system.stateVersion = "25.11"; # don't change without looking up
 }
