@@ -54,7 +54,7 @@ in {
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [];
 
   system.stateVersion = "25.11"; # don't change without looking up
 }

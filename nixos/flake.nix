@@ -29,7 +29,10 @@
   in {
     nixosConfigurations.craptop = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {inherit inputs; inherit pkgs-unstable;};
+      specialArgs = {
+        inherit inputs;
+        inherit pkgs-unstable;
+      };
       modules = [
         disko.nixosModules.disko
         ./hosts/craptop/configuration.nix
