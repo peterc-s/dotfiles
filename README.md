@@ -12,5 +12,5 @@ TODO before switch:
     - [ ] add bookmarks to useful things?
 - [x] gaming stuff
 - [x] auto GC + auto updates
-- [ ] maybe try unstable?
+- [x] maybe try unstable?
 - [ ] figure out why neovim tinymist keeps reinstalling
