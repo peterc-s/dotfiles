@@ -34,6 +34,7 @@ in {
     ../../modules/features/common-software.nix
     ../../modules/features/development.nix
     ../../modules/features/zram.nix
+    ../../modules/features/dark-mode.nix
   ];
 
   # use latest kernel

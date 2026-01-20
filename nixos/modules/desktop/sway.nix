@@ -20,6 +20,7 @@
       wl-mirror
       dunst
       autotiling-rs
+      nemo
     ];
   };
 }
