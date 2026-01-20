@@ -33,6 +33,7 @@ in {
     ../../modules/features/gaming.nix
     ../../modules/features/common-software.nix
     ../../modules/features/development.nix
+    ../../modules/features/zram.nix
   ];
 
   # use latest kernel
