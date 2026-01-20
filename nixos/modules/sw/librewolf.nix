@@ -31,6 +31,34 @@
       # Then, download the XPI by filling it in to the install_url template, unzip it,
       # run `jq .browser_specific_settings.gecko.id manifest.json` or
       # `jq .applications.gecko.id manifest.json` to get the UUID
+      SearchEngines = {
+        Add = [
+          {
+            Alias = "!np";
+            Description = "Search in NixOS Packages";
+            IconURL = "https://nixos.org/favicon.png";
+            Method = "GET";
+            Name = "NixOS Packages";
+            URLTemplate = "https://search.nixos.org/packages?from=0&size=200&sort=relevance&type=packages&query={searchTerms}";
+          }
+          {
+            Alias = "!no";
+            Description = "Search in NixOS Options";
+            IconURL = "https://nixos.org/favicon.png";
+            Method = "GET";
+            Name = "NixOS Options";
+            URLTemplate = "https://search.nixos.org/options?from=0&size=200&sort=relevance&type=packages&query={searchTerms}";
+          }
+          {
+            Alias = "!nw";
+            Description = "Search NixOS Wiki";
+            IconURL = "https://nixos.org/favicon.png";
+            Method = "GET";
+            Name = "NixOS Wiki";
+            URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+          }
+        ];
+      };
       FirefoxHome = {
         "Search" = false;
       };
