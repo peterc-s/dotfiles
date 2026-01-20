@@ -14,3 +14,4 @@ TODO before switch:
 - [x] auto GC + auto updates
 - [x] maybe try unstable?
 - [ ] figure out why neovim tinymist keeps reinstalling
+    - [ ] fix it?
