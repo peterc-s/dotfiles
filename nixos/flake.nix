@@ -59,6 +59,7 @@
           ./modules/features/development.nix
           ./modules/features/zram.nix
           ./modules/features/dark-mode.nix
+          ./modules/features/power.nix
         ];
       };
     };

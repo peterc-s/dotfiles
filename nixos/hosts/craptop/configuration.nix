@@ -15,6 +15,7 @@ in {
   # use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # cpu
   hardware.cpu.intel.updateMicrocode = true;
 
   networking.hostName = hostName;
