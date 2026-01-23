@@ -8,8 +8,36 @@
   hostName = "craptop";
 in {
   imports = [
+    ../../generic.nix
     ./hardware-configuration.nix
     ./disk-config.nix
+
+    # bootloader
+    ../../modules/boot/grub.nix
+    ../../modules/boot/plymouth.nix
+
+    # dm
+    ../../modules/display-manager/ly.nix
+
+    # desktop
+    ../../modules/desktop/sway.nix
+
+    # common stuff
+    ../../modules/core/core.nix
+
+    # configured software
+    ../../modules/sw/git.nix
+    ../../modules/sw/fish.nix
+    ../../modules/sw/librewolf.nix
+    ../../modules/sw/neovim.nix
+
+    # features
+    ../../modules/features/gaming.nix
+    ../../modules/features/common-software.nix
+    ../../modules/features/development.nix
+    ../../modules/features/zram.nix
+    ../../modules/features/dark-mode.nix
+    ../../modules/features/power.nix
   ];
 
   # use latest kernel
