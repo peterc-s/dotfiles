@@ -30,6 +30,7 @@ in {
     ../../modules/sw/fish.nix
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
+    ../../modules/sw/syncthing.nix
 
     # features
     ../../modules/features/gaming.nix
