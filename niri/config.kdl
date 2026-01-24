@@ -44,6 +44,11 @@ input {
     }
 }
 
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
 output "DP-1" {
     mode "1920x1080@144.001"
     transform "normal"
@@ -104,7 +109,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+T hotkey-overlay-title="Terminal" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Launcher" { spawn "rofi -terminal 'kitty' -show combi -combi-modes drun"; }
+    Mod+D hotkey-overlay-title="Launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

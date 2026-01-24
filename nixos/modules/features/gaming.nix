@@ -9,6 +9,9 @@
     gamemode.enable = true;
     gamescope.enable = true;
     steam = {
+      package = pkgs.steam.override {
+        extraArgs = "-system-composer";
+      };
       enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin

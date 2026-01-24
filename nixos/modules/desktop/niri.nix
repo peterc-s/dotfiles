@@ -18,6 +18,9 @@
     wl-mirror
     dunst
     nemo
+    xcursor-themes
+    adwaita-fonts
+    adwaita-icon-theme
   ];
   programs.niri.enable = true;
 }
