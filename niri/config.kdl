@@ -66,10 +66,8 @@ layout {
     default-column-width { proportion 0.5; }
     focus-ring {
         width 2
-
-        // todo: theme
-        active-color "#7fc8ff"
-        inactive-color "#505050"
+        active-color "#373B41"
+        inactive-color "#282A2E"
     }
 }
 
@@ -110,6 +108,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+T hotkey-overlay-title="Terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+W hotkey-overlay-title="Browser" { spawn "librewolf"; }
     Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -242,7 +241,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+S { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }

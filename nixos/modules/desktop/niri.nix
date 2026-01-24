@@ -21,6 +21,7 @@
     xcursor-themes
     adwaita-fonts
     adwaita-icon-theme
+    xwayland-satellite
   ];
   programs.niri.enable = true;
 }
