@@ -34,6 +34,7 @@ in {
     ../../modules/sw/syncthing.nix
 
     # features
+    ../../modules/features/nvidia.nix
     ../../modules/features/gaming.nix
     ../../modules/features/common-software.nix
     ../../modules/features/development.nix
