@@ -26,5 +26,6 @@
     binwalk
     ripgrep
     file
+    fastfetch
   ];
 }

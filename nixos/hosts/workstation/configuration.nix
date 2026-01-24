@@ -32,6 +32,7 @@ in {
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
     ../../modules/sw/syncthing.nix
+    ../../modules/sw/vesktop.nix
 
     # features
     ../../modules/features/nvidia.nix

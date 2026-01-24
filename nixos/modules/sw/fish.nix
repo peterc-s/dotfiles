@@ -23,7 +23,6 @@
     '';
     shellAliases = {
       sw = "NH_OS_FLAKE=${flakePath} nh os switch";
-      hms = "NH_HOME_FLAKE=${flakePath} nh home switch";
     };
   };
 
