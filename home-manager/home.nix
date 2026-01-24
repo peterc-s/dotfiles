@@ -22,6 +22,7 @@
       ".config/kitty".source = ../kitty;
       ".config/nvim".source = ../nvim;
       ".config/satty".source = ../satty;
+      ".config/niri".source = ../niri;
     };
   };
 }
