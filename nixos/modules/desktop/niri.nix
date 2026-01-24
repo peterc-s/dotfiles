@@ -15,10 +15,8 @@
     swayidle
     swaylock-effects
     rofi
-    waybar
     wl-mirror
     dunst
-    autotiling-rs
     nemo
   ];
   programs.niri.enable = true;
