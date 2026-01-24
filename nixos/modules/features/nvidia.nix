@@ -11,6 +11,5 @@
   hardware.nvidia.modesetting.enable = true;
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
-    nvidia-settings
   ];
 }
