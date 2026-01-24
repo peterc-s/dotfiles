@@ -18,10 +18,11 @@
       }
     ];
   };
-  # environment.memoryAllocator.provider = "graphene-hardened";
+  # environment.memoryAllocator.provider = "graphene-hardened"; # TODO: breaks librewolf
   users.groups.netdev = {};
   services = {
-    # dbus.implementation = "broker";
+    # dbus.implementation = "broker"; # TODO: breaks something
+    gnome.gnome-keyring.enable = true;
     logrotate.enable = true;
     journald = {
       storage = "volatile";

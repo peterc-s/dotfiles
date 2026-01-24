@@ -86,7 +86,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
 # Screenshot
-bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Print exec grim -g "$(slurp)" - | satty -f - -o ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
 # Lock
 bindsym Ctrl+Mod1+l exec $lock_cmd

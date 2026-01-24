@@ -21,6 +21,7 @@
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/kitty".source = ../kitty;
       ".config/nvim".source = ../nvim;
+      ".config/satty".source = ../satty;
     };
   };
 }

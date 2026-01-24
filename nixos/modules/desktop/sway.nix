@@ -10,6 +10,7 @@
     extraPackages = with pkgs; [
       brightnessctl
       grim
+      satty
       wl-clipboard
       wayclip
       slurp
