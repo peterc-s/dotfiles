@@ -17,7 +17,10 @@
       user = {
         email = "petercs@purelymail.com";
         name = "peterc-s";
+        signingkey = "2B4B6F54BED9313D";
       };
+      commit.gpgsign = true;
+      tag.gpgSign = true;
       diff = {
         tool = "kitty";
         guitool = "kitty.gui";
