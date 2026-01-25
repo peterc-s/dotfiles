@@ -5,7 +5,10 @@
   inputs,
   ...
 }: {
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
   environment.systemPackages = [pkgs.bluetui];
   systemd.user.services.mpris-proxy = {
     description = "Mpris proxy";
