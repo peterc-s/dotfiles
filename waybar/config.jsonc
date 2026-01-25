@@ -113,7 +113,7 @@
     },
     "custom/mullvad": {
         "type": "custom/script",
-        "exec": "$HOME/Drive/Scripts/vpn-status.sh",
+        "exec": "$HOME/.config/waybar/vpn-status.sh",
         "interval": 1
     }
 }
