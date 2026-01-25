@@ -140,7 +140,7 @@
   },
   "general": {
     "avatarImage": "/home/pete/dotfiles/wallpapers/detrimentalist.jpg",
-    "dimmerOpacity": 0.2,
+    "dimmerOpacity": 0,
     "showScreenCorners": false,
     "forceBlackScreenCorners": false,
     "scaleRatio": 1,
@@ -154,7 +154,7 @@
     "lockOnSuspend": true,
     "showSessionButtonsOnLockScreen": true,
     "showHibernateOnLockScreen": false,
-    "enableShadows": true,
+    "enableShadows": false,
     "shadowDirection": "bottom_right",
     "shadowOffsetX": 2,
     "shadowOffsetY": 3,
