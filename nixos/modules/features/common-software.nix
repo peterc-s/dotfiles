@@ -32,6 +32,7 @@
     libreoffice
     lz4
     mupdf
+    openssl
     p7zip
     presenterm
     qbittorrent
