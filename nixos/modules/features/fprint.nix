@@ -10,4 +10,8 @@
   ];
 
   services.fprintd.enable = true;
+  security.pam.services.sudo = {
+    enable = true;
+    fprintAuth = true;
+  };
 }
