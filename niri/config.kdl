@@ -49,7 +49,7 @@ cursor {
     xcursor-size 24
 }
 
-output "DP-1" {
+output "PNP(AOC) 2460G4 0x00011B71" {
     mode "1920x1080@144.001"
     transform "normal"
 }
@@ -93,7 +93,7 @@ window-rule {
 // https://variety4me.github.io/niri_docs/Application-Issues/#steam
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="bottom-right"
+    default-floating-position x=10 y=20 relative-to="bottom-right"
 }
 
 // TODO: Bitwarden?
