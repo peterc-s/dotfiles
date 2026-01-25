@@ -23,7 +23,7 @@ in {
     ../../modules/desktop/sway.nix
 
     # common stuff
-    ../../modules/core/core.nix
+    ../../modules/core
 
     # configured software
     ../../modules/sw/git.nix

@@ -6,13 +6,13 @@
   ...
 }: {
   imports = [
-    ./locale.nix
-    ./printing.nix
     ./audio.nix
-    ./nix.nix
     ./auto-update.nix
-    ./fonts.nix
-    ./security.nix
     ./cpu.nix
+    ./fonts.nix
+    ./locale.nix
+    ./nix.nix
+    ./printing.nix
+    ./security.nix
   ];
 }

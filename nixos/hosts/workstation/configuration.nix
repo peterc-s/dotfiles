@@ -24,7 +24,7 @@ in {
     ../../modules/desktop/noctalia-shell.nix
 
     # common stuff
-    ../../modules/core/core.nix
+    ../../modules/core
 
     # configured software
     ../../modules/sw/git.nix
