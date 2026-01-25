@@ -31,6 +31,7 @@ set $mute_mic_cmd pulsemixer --list-sources | rg -i "mic" | cut -f3 | cut -d ","
 
 ### Output configuration
 output * bg /home/pete/dotfiles/wallpapers/wlfgrl.png fill
+exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 ### Set workspaces
 workspace 1 output eDP-1
@@ -52,6 +53,7 @@ exec swayidle -w \
 exec waybar
 exec dunst
 exec autotiling-rs
+exec systemctl --user start way-displays
 
 ### Lock on lid shut
 bindswitch lid:on exec $lock_cmd

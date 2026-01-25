@@ -1,0 +1,21 @@
+ARRANGE: COLUMN
+ALIGN: MIDDLE
+
+ORDER:
+  - '!^DP-'
+  - 'HDMI-1'
+
+SCALING: FALSE
+AUTO_SCALE: FALSE
+
+MODE:
+  - NAME_DESC: 'Chimei Innolux Corporation 0x143F (eDP-1)'
+    WIDTH: 1920
+    HEIGHT: 1200
+    HZ: 60
+
+VRR_OFF:
+  - 'Chimei Innolux Corporation 0x143F (eDP-1)'
+
+CALLBACK_CMD: notify-send "way-displays ${CALLBACK_LEVEL}" "${CALLBACK_MSG}"
+LOG_THRESHOLD: INFO
