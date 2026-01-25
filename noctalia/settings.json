@@ -108,7 +108,7 @@
         },
         {
           "deviceNativePath": "",
-          "displayMode": "onhover",
+          "displayMode": "alwaysShow",
           "hideIfIdle": false,
           "hideIfNotDetected": true,
           "id": "Battery",
