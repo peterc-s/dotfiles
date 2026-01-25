@@ -6,21 +6,21 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    adwaita-fonts
+    adwaita-icon-theme
     brightnessctl
+    dunst
     grim
+    nemo
+    rofi
     satty
-    wl-clipboard
-    wayclip
     slurp
     swayidle
     swaylock-effects
-    rofi
+    wayclip
+    wl-clipboard
     wl-mirror
-    dunst
-    nemo
     xcursor-themes
-    adwaita-fonts
-    adwaita-icon-theme
     xwayland-satellite
   ];
   programs.niri.enable = true;

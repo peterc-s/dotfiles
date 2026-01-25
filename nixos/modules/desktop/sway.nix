@@ -8,20 +8,20 @@
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
+      autotiling-rs
       brightnessctl
+      dunst
       grim
+      nemo
+      rofi
       satty
-      wl-clipboard
-      wayclip
       slurp
       swayidle
       swaylock-effects
-      rofi
       waybar
+      wayclip
+      wl-clipboard
       wl-mirror
-      dunst
-      autotiling-rs
-      nemo
     ];
   };
 }

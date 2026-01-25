@@ -6,22 +6,38 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    gnumake
-    gcc
-    cmake
     alejandra
-    uv
-    python3
-    ruff
+    bacon
+    bash-language-server
     black
+    capstone
+    cmake
+    distrobox
+    fasm
+    ffmpeg
+    gcc
+    gnumake
+    go
+    hyperfine
+    libreoffice
+    lua
+    lua-language-server
+    lua54Packages.luarocks-nix
     pylint
     pyright
-    ty
+    python3
+    ruff
+    rust-analyzer
     rustup
-    bacon
+    strace
+    stylua
+    tinymist
+    tree-sitter
+    ty
     typst
     typstyle
-    tinymist
+    uv
+    valgrind
     websocat
   ];
 }

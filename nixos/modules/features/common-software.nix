@@ -6,26 +6,49 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    audacity
+    binwalk
     btop
     croc
-    home-manager
-    kitty
-    yubikey-manager
-    starship
-    zoxide
-    libnotify
-    mupdf
-    gh
+    dosfstools
     dua
-    tealdeer
-    tree
-    jq
-    fzf
-    timg
+    efibootmgr
     exiftool
-    binwalk
-    ripgrep
-    file
     fastfetch
+    file
+    fzf
+    gh
+    gimp
+    gnused
+    gnutar
+    graphicsmagick
+    gzip
+    home-manager
+    imagemagick
+    jq
+    kitty
+    libnotify
+    lz4
+    mupdf
+    p7zip
+    presenterm
+    qbittorrent
+    qrencode
+    ripgrep
+    rsync
+    spotify
+    starship
+    tealdeer
+    timg
+    tree
+    ungoogled-chromium
+    unp
+    unzip
+    vim
+    way-displays
+    wget
+    wine-wayland
+    yubikey-manager
+    zoxide
   ];
 }

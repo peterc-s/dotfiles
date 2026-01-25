@@ -15,3 +15,11 @@ TODO before switch:
 - [x] maybe try unstable?
 - [ ] figure out why neovim tinymist keeps reinstalling
     - [ ] fix it?
+- [ ] [binaryninja](https://github.com/jchv/nix-binary-ninja)
+- [ ] clamav?
+- [ ] distrobox setup?
+- [ ] LaTeX
+- [ ] Typst
+- [ ] docker
+- [ ] eduroam
+- [ ] VMs
