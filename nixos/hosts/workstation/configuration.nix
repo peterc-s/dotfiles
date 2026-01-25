@@ -9,8 +9,8 @@
 in {
   imports = [
     ../../generic.nix
-    ./hardware-configuration.nix
     ./disk-config.nix
+    ./hardware-configuration.nix
 
     # bootloader
     ../../modules/boot/grub.nix
@@ -27,8 +27,8 @@ in {
     ../../modules/core
 
     # configured software
-    ../../modules/sw/git.nix
     ../../modules/sw/fish.nix
+    ../../modules/sw/git.nix
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
     ../../modules/sw/syncthing.nix
@@ -36,13 +36,13 @@ in {
 
     # features
     ../../modules/features/bluetooth.nix
-    ../../modules/features/nvidia.nix
-    ../../modules/features/gaming.nix
     ../../modules/features/common-software.nix
-    ../../modules/features/development.nix
-    ../../modules/features/zram.nix
     ../../modules/features/dark-mode.nix
+    ../../modules/features/development.nix
+    ../../modules/features/gaming.nix
+    ../../modules/features/nvidia.nix
     ../../modules/features/power.nix
+    ../../modules/features/zram.nix
   ];
 
   # use latest kernel
