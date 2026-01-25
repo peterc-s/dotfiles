@@ -49,6 +49,7 @@
     wget
     wine-wayland
     yubikey-manager
+    yubioath-flutter
     zoxide
   ];
 }
