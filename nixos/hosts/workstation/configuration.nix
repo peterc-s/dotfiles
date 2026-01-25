@@ -35,6 +35,7 @@ in {
     ../../modules/sw/vesktop.nix
 
     # features
+    ../../modules/features/bluetooth.nix
     ../../modules/features/nvidia.nix
     ../../modules/features/gaming.nix
     ../../modules/features/common-software.nix
