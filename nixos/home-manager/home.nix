@@ -21,9 +21,6 @@
       ".config/nvim".source = ../../nvim;
       ".config/satty".source = ../../satty;
       ".config/niri".source = ../../niri;
-
-      # for GUI configurability
-      ".config/noctalia".source = config.lib.file.mkOutOfStoreSymlink ../../noctalia;
     };
   };
 }
