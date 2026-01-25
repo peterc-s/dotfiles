@@ -6,7 +6,7 @@
 5. `sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount disk-config.nix`.
 6. Create `/mnt/home/pete` and copy `dotfiles` to it.
 7. `sudo nixos-install --flake /mnt/home/pete/dotfiles/nixos/#<hostname>`.
-8. `sudo nixos-enter -c 'passwd pete'` to set user password, then `sudo nixos-enter -c 'chown pete: /home/pete/dotfiles'` (UNTESTED, but can do this after rebooting).
+8. `sudo nixos-enter -c 'passwd pete'` to set user password, then `sudo nixos-enter -c 'chown pete: /home/pete/dotfiles -R'`
 9. Reboot.
 
 # New Host
@@ -20,6 +20,6 @@
 8. Make sure to stage git changes.
 9. Create `/mnt/home/pete` and copy `dotfiles` to it.
 10. `sudo nixos-install --flake /mnt/home/pete/dotfiles/nixos/#<hostname>`.
-11. `sudo nixos-enter -c 'passwd pete'` to set user password, then `sudo nixos-enter -c 'chown pete: /home/pete/dotfiles'` (UNTESTED, but can do this after rebooting).
+11. `sudo nixos-enter -c 'passwd pete'` to set user password, then `sudo nixos-enter -c 'chown pete: /home/pete/dotfiles -R'`
 12. Reboot.
 13. Remember to set up git and push new host to git.

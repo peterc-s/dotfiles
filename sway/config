@@ -31,9 +31,6 @@ set $mute_mic_cmd pulsemixer --list-sources | rg -i "mic" | cut -f3 | cut -d ","
 
 ### Output configuration
 output * bg /home/pete/dotfiles/wallpapers/wlfgrl.png fill
-# output eDP-1 position 0,1080
-# output HDMI-A-1 position 0,0
-exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 ### Set workspaces
 workspace 1 output eDP-1

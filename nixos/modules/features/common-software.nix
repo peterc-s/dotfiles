@@ -45,7 +45,6 @@
     unp
     unzip
     vim
-    way-displays
     wget
     wine-wayland
     yubikey-manager
