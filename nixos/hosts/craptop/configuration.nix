@@ -29,6 +29,7 @@ in {
     ../../modules/sw/fish.nix
     ../../modules/sw/git.nix
     ../../modules/sw/librewolf.nix
+    ../../modules/sw/mullvad.nix
     ../../modules/sw/neovim.nix
     ../../modules/sw/syncthing.nix
 
