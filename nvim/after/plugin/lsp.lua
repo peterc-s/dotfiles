@@ -51,6 +51,15 @@ vim.lsp.enable("lua_ls")
 -- vim.lsp.enable('rust_analyzer')
 
 -- Nix
+vim.lsp.config("nixd", {
+	cmd = { "nixd" },
+	root_markers = {
+		"flake.nix",
+		".git",
+	},
+	filetypes = {"nix"},
+	capabilities = capabilities,
+})
 vim.lsp.enable("nixd")
 
 -- C/C++
