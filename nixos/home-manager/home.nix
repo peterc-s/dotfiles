@@ -8,6 +8,10 @@
     recursive = true;
   };
 
+  programs.gpg.publicKeys = {
+    source = ../../pubkey.asc;
+  };
+
   home = {
     stateVersion = "25.11";
 
