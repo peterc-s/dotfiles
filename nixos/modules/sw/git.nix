@@ -35,6 +35,21 @@
       difftool."kitty.gui" = {
         cmd = "kitten diff $LOCAL $REMOTE";
       };
+      push = {
+        default = "simple";
+        recurseSubmodules = "check";
+      };
+      merge = {
+        keepBackup = true;
+        autoStash = true;
+        ff = "only";
+      };
+      color = {
+        ui = "auto";
+        status = "auto";
+        branch = "auto";
+      };
+      pull.rebase = true;
     };
   };
 }
