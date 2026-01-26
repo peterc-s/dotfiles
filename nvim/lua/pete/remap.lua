@@ -6,36 +6,36 @@
 
 -- Only on LSP attach
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("lsp_attach_keymaps", { clear = true }),
-    callback = function(args)
-        local bufnr = args.buf
-        local opts = { noremap = true, silent = true, buffer = bufnr }
+	group = vim.api.nvim_create_augroup("lsp_attach_keymaps", { clear = true }),
+	callback = function(args)
+		local bufnr = args.buf
+		local opts = { noremap = true, silent = true, buffer = bufnr }
 
-        -- Navigation commands
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- Go to definition
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- Go to declaration
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts) -- Go to implementation
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts) -- Find references
-        vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts) -- Go to type definition
+		-- Navigation commands
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- Go to definition
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- Go to declaration
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts) -- Go to implementation
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts) -- Find references
+		vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts) -- Go to type definition
 
-        -- Documentation
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- Show hover info
-        -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Show signature help
+		-- Documentation
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- Show hover info
+		-- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Show signature help
 
-        -- Code actions
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- Code actions
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- Rename symbol
-        -- vim.keymap.set("n", "<leader>f", function()
-        -- 	vim.lsp.buf.format({ async = true })
-        -- end, opts) -- Format code
+		-- Code actions
+		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- Code actions
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- Rename symbol
+		-- vim.keymap.set("n", "<leader>f", function()
+		-- 	vim.lsp.buf.format({ async = true })
+		-- end, opts) -- Format code
 
-        -- Diagnostics
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- Previous diagnostic
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- Next diagnostic
-        vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- Show diagnostic
-        vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts) -- List diagnostics
-    end,
-    desc = "LSP: Set up keymaps",
+		-- Diagnostics
+		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- Previous diagnostic
+		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- Next diagnostic
+		vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- Show diagnostic
+		vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts) -- List diagnostics
+	end,
+	desc = "LSP: Set up keymaps",
 })
 
 -- ===============
@@ -79,8 +79,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Multi-join
 vim.keymap.set("n", "J", function()
-    local count = vim.v.count + 1 or ""
-    return "mz" .. count .. "J`z"
+	local count = vim.v.count + 1 or ""
+	return "mz" .. count .. "J`z"
 end, { expr = true })
 
 -- Paste without yanking deleted text
@@ -112,49 +112,49 @@ vim.api.nvim_set_keymap("n", "Q", "!!$SHELL<CR>", { noremap = true })
 
 -- Keymap to toggle file-type specific terminal
 vim.keymap.set("n", "<leader>b", function()
-    local ft = vim.bo.filetype
+	local ft = vim.bo.filetype
 
-    local ft_configs = {
-        rust = {
-            cmd = "bacon",
-            direction = "vertical",
-        },
-        typst = {
-            cmd = "typst watch " .. vim.fn.expand("%:p"),
-            direction = "horizontal",
-        },
-    }
+	local ft_configs = {
+		rust = {
+			cmd = "bacon",
+			direction = "vertical",
+		},
+		typst = {
+			cmd = "typst watch " .. vim.fn.expand("%:p"),
+			direction = "horizontal",
+		},
+	}
 
-    local config = ft_configs[ft]
-    if not config then
-        vim.notify("No build command configured for filetype: " .. ft, vim.log.levels.WARN)
-        return
-    end
+	local config = ft_configs[ft]
+	if not config then
+		vim.notify("No build command configured for filetype: " .. ft, vim.log.levels.WARN)
+		return
+	end
 
-    local cmd = config.cmd
+	local cmd = config.cmd
 
-    local terms = require("toggleterm.terminal").get_all()
-    for _, term in pairs(terms) do
-        if term.cmd == cmd then
-            term:shutdown()
-            return
-        end
-    end
+	local terms = require("toggleterm.terminal").get_all()
+	for _, term in pairs(terms) do
+		if term.cmd == cmd then
+			term:shutdown()
+			return
+		end
+	end
 
-    local Terminal = require("toggleterm.terminal").Terminal
-    local term = Terminal:new({
-        cmd = cmd,
-        direction = config.direction,
-        close_on_exit = true,
-        auto_scroll = true,
-        start_in_insert = false,
-        count = 10,
-        on_open = function(t)
-            vim.cmd("wincmd p")
-            vim.cmd("stopinsert")
-        end,
-    })
-    term:open()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local term = Terminal:new({
+		cmd = cmd,
+		direction = config.direction,
+		close_on_exit = true,
+		auto_scroll = true,
+		start_in_insert = false,
+		count = 10,
+		on_open = function(t)
+			vim.cmd("wincmd p")
+			vim.cmd("stopinsert")
+		end,
+	})
+	term:open()
 end, { desc = "Toggle filetype-specific build terminal" })
 
 -- ===============

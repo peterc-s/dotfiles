@@ -65,6 +65,11 @@ require("lazy").setup({
 	},
 	{ "tikhomirov/vim-glsl" },
 	{ "tadmccorkle/markdown.nvim", opts = {} },
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+		opts = {},
+	},
 	{ "lervag/vimtex" },
 	{
 		"norcalli/nvim-colorizer.lua",
