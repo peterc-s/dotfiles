@@ -35,6 +35,7 @@ alias mk="mkdir"
 alias tmr="tereminder"
 alias snvim="sudoedit"
 alias su="su -l"
+alias nd="nix develop -c fish"
 
 # Private aliases
 # source ~/.config/fish/priv_aliases.fish

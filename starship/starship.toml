@@ -97,6 +97,13 @@ disabled = true
 [c]
 disabled = true
 
+[nix_shell]
+format = '[$name]($style)'
+style = "bold blue"
+unknown_msg = ""
+disabled = false
+heuristic = false
+
 [os]
 disabled = false
 

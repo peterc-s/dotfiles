@@ -17,8 +17,10 @@
     flakePath = "~/dotfiles/nixos/";
   in {
     enable = true;
+    # todo: figure out what is removing the them
     interactiveShellInit = ''
       set -U fish_greeting
+      fish_config theme choose "fish default"
       set NH_FLAKE ${flakePath}
     '';
     shellAliases = {
