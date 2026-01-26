@@ -9,6 +9,7 @@
     ./asm.nix
     ./c.nix
     ./go.nix
+    ./js.nix
     ./latex.nix
     ./lua.nix
     ./nix.nix

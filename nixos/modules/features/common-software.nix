@@ -15,6 +15,7 @@
     efibootmgr
     exiftool
     fastfetch
+    fd
     ffmpeg
     file
     fzf

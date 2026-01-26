@@ -6,9 +6,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    clang
-    clang-tools
-    cmake
-    gcc
+    nodejs
+    typescript-language-server
   ];
 }
