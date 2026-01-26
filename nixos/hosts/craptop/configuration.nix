@@ -25,6 +25,9 @@ in {
     # common stuff
     ../../modules/core
 
+    # development
+    ../../modules/devel
+
     # configured software
     ../../modules/sw/fish.nix
     ../../modules/sw/git.nix
@@ -36,7 +39,6 @@ in {
     # features
     ../../modules/features/common-software.nix
     ../../modules/features/dark-mode.nix
-    ../../modules/features/development.nix
     ../../modules/features/gaming.nix
     ../../modules/features/power.nix
     ../../modules/features/zram.nix

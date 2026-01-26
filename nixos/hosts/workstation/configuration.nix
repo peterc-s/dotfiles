@@ -26,6 +26,9 @@ in {
     # common stuff
     ../../modules/core
 
+    # development
+    ../../modules/devel
+
     # configured software
     ../../modules/sw/fish.nix
     ../../modules/sw/git.nix
@@ -38,7 +41,6 @@ in {
     ../../modules/features/bluetooth.nix
     ../../modules/features/common-software.nix
     ../../modules/features/dark-mode.nix
-    ../../modules/features/development.nix
     ../../modules/features/gaming.nix
     ../../modules/features/nvidia.nix
     ../../modules/features/power.nix

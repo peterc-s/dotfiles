@@ -15,6 +15,7 @@
     efibootmgr
     exiftool
     fastfetch
+    ffmpeg
     file
     fzf
     gh
@@ -28,6 +29,7 @@
     jq
     kitty
     libnotify
+    libreoffice
     lz4
     mupdf
     p7zip
