@@ -3,11 +3,9 @@ NixOS config
 
 TODO:
 - [ ] clamav?
-- [x] distrobox setup
-- [x] LaTeX
-- [x] Typst
 - [ ] eduroam
 - [ ] VMs
+- [ ] maybe some scripts for updating config a little easier
 
 Blocked stuff:
 - [ ] librewolf:
