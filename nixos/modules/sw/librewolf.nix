@@ -5,9 +5,23 @@
   pkgs,
   ...
 }: {
+  # set default browser
+  home-manager.users.pete = {
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
+        "x-scheme-handler/about" = "librewolf.desktop";
+        "x-scheme-handler/unknown" = "librewolf.desktop";
+      };
+    };
+  };
+
   programs.firefox = {
     enable = true;
-    package = pkgs.librewolf;
+    package = inputs.nixpkgs-librewolf.legacyPackages.${pkgs.stdenv.hostPlatform.system}.librewolf;
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;

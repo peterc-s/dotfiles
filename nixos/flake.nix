@@ -18,6 +18,14 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    binaryninja = {
+      url = "github:peterc-s/nix-binary-ninja";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # TODO: check if fixed
+    nixpkgs-librewolf.url = "github:nixos/nixpkgs/e4bae1bd10c9c57b2cf517953ab70060a828ee6f";
   };
 
   outputs = {

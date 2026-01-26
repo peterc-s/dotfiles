@@ -39,7 +39,7 @@ in {
     # features
     ../../modules/features/bluetooth.nix
     ../../modules/features/common-software.nix
-    ../../modules/features/cyber.nix
+    ../../modules/features/cyber.nix # must be disabled on install due to binary-ninja
     ../../modules/features/dark-mode.nix
     ../../modules/features/development.nix
     ../../modules/features/fprint.nix
