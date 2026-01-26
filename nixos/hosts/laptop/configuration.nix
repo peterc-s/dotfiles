@@ -38,6 +38,7 @@ in {
     ../../modules/sw/neovim.nix
     ../../modules/sw/syncthing.nix
     ../../modules/sw/vesktop.nix
+    ../../modules/sw/distrobox.nix
 
     # features
     ../../modules/features/bluetooth.nix

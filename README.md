@@ -3,10 +3,9 @@ NixOS config
 
 TODO:
 - [ ] clamav?
-- [ ] distroox setup?
+- [x] distrobox setup
 - [x] LaTeX
 - [x] Typst
-- [ ] docker
 - [ ] eduroam
 - [ ] VMs
 
