@@ -14,4 +14,6 @@
     enable = true;
     fprintAuth = true;
   };
+  security.pam.services.login.fprintAuth = false;
+  security.pam.services.ly.fprintAuth = false;
 }
