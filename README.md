@@ -1,21 +1,12 @@
 # My Dotfiles
-WIP config.
+NixOS config
 
-TODO before switch:
-- [x] modularise setup for use between laptops and pcs
-    - [x] initial modularisation
-    - [x] figure out how to only home manager configure software if it is currently enabled
+TODO:
 - [ ] figure out a streamlined installation method for better portability
-- [ ] start moving configs over to nix where possible
-- [x] librewolf:
-    - [x] get bitwarden installing properly
-    - [x] add bookmarks to useful things?
-- [x] gaming stuff
-- [x] auto GC + auto updates
-- [x] maybe try unstable?
+- [ ] librewolf:
+    - [ ] try unpinning and hope it doesn't try to rebuild locally again
 - [ ] figure out why neovim tinymist keeps reinstalling
     - [ ] fix it?
-- [ ] [binaryninja](https://github.com/jchv/nix-binary-ninja)
 - [ ] clamav?
 - [ ] distrobox setup?
 - [ ] LaTeX

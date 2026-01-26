@@ -52,6 +52,7 @@
         }
       ];
       SearchEngines = {
+        Default = "DuckDuckGo";
         Add = [
           {
             Alias = "!np";
