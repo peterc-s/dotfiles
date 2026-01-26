@@ -15,5 +15,6 @@
     ./nix.nix
     ./printing.nix
     ./security.nix
+    ./yubikey.nix
   ];
 }

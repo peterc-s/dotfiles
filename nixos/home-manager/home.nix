@@ -8,8 +8,11 @@
     recursive = true;
   };
 
-  programs.gpg.publicKeys = {
-    source = ../../pubkey.asc;
+  programs.gpg = {
+    scdaemonSettings.disable-ccid = true;
+    publicKeys = {
+      source = ../../pubkey.asc;
+    };
   };
 
   home = {
