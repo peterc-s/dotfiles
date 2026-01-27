@@ -9,6 +9,7 @@
     capstone
     gnumake
     hyperfine
+    just
     strace
     tree-sitter
     valgrind
