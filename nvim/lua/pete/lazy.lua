@@ -31,9 +31,9 @@ require("lazy").setup({
 		lazy = false,
 		build = ":TSUpdate",
 	},
-	{ "nvim-treesitter/playground" },
 	{
 		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "mbbill/undotree" },
@@ -53,17 +53,16 @@ require("lazy").setup({
 		version = "^6",
 		lazy = false,
 	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {},
-	},
+	-- {
+	-- 	"windwp/nvim-autopairs",
+	-- 	event = "InsertEnter",
+	-- 	opts = {},
+	-- },
 	{
 		"kylechui/nvim-surround",
 		version = "*",
 		opts = {},
 	},
-	{ "tikhomirov/vim-glsl" },
 	{ "tadmccorkle/markdown.nvim", opts = {} },
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
@@ -92,20 +91,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- Waiting for lspconfig dependency to be resolved
-	-- {
-	--     "Julian/lean.nvim",
-	--     ft = "lean",
-	--     dependencies = {
-	--         "neovim/nvim-lspconfig",
-	--         "nvim-lua/plenary.nvim",
-	--     },
-	--     config = function()
-	--         require("lean").setup({
-	--             mappings = true,
-	--         })
-	--     end,
-	-- },
 	{
 		"chomosuke/typst-preview.nvim",
 		lazy = false,
