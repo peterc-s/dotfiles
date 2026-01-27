@@ -112,7 +112,7 @@ require("lazy").setup({
 		version = "1.*",
 		opts = {},
 	},
-	{ "RaafatTurki/hex.nvim", opts = {} },
+	-- { "RaafatTurki/hex.nvim", opts = {} },
 	{
 		"stevearc/oil.nvim",
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },

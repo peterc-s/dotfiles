@@ -5,8 +5,11 @@
   inputs,
   ...
 }: {
-  # for kitten diff
-  environment.systemPackages = with pkgs; [kitty];
+  environment.systemPackages = with pkgs; [
+    gh
+    glab
+    kitty # for kitten diff
+  ];
 
   programs.git = {
     enable = true;

@@ -19,7 +19,6 @@
     ffmpeg
     file
     fzf
-    gh
     gimp
     gnused
     gnutar
