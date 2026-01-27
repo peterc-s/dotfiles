@@ -51,6 +51,9 @@ in {
     ../../modules/features/silly.nix
     ../../modules/features/uni.nix
     ../../modules/features/zram.nix
+
+    # specialisations
+    ../../modules/specialisations/nvidia-proprietary.nix
   ];
 
   # use latest kernel
