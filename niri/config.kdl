@@ -55,9 +55,18 @@ cursor {
     xcursor-size 24
 }
 
+output "eDP-1" {
+    position x=0 y=0
+}
+
 output "PNP(AOC) 2460G4 0x00011B71" {
     mode "1920x1080@144.001"
     transform "normal"
+}
+
+output "Dell Inc. DELL S2725QS 8VXC364" {
+    mode "2560x1440@119.998"
+    position x=0 y=-1440
 }
 
 layout {

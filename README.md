@@ -3,7 +3,7 @@ NixOS config
 
 TODO:
 - [ ] clamav?
-- [ ] eduroam
+- [x] eduroam
 - [ ] VMs
 - [ ] maybe some scripts for updating config a little easier
 
