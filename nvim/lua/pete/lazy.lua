@@ -188,6 +188,13 @@ require("lazy").setup({
 			vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = "#abb2bf", bg = "NONE" })
 		end,
 	},
+	{
+		"mluders/comfy-line-numbers.nvim",
+		opts = {
+			hidden_file_types = { "undotree" },
+			hidden_buffer_types = { "terminal", "nofile" },
+		},
+	},
 }, {
 	lockfile = vim.fn.stdpath("state") .. "/lazy-lock.json",
 })
