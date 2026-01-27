@@ -44,6 +44,12 @@ input {
     }
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 cursor {
     xcursor-theme "Adwaita"
     xcursor-size 24
