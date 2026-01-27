@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    # TODO: check if fixed
+    nixpkgs-librewolf.url = "github:nixos/nixpkgs/e4bae1bd10c9c57b2cf517953ab70060a828ee6f";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -24,8 +26,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: check if fixed
-    nixpkgs-librewolf.url = "github:nixos/nixpkgs/e4bae1bd10c9c57b2cf517953ab70060a828ee6f";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
