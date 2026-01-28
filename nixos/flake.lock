@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768923567,
-        "narHash": "sha256-GVJ0jKsyXLuBzRMXCDY6D5J8wVdwP1DuQmmvYL/Vw/Q=",
+        "lastModified": 1769524058,
+        "narHash": "sha256-zygdD6X1PcVNR2PsyK4ptzrVEiAdbMqLos7utrMDEWE=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "00395d188e3594a1507f214a2f15d4ce5c07cb28",
+        "rev": "71a3fc97d80881e91710fe721f1158d3b96ae14d",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768949235,
-        "narHash": "sha256-TtjKgXyg1lMfh374w5uxutd6Vx2P/hU81aEhTxrO2cg=",
+        "lastModified": 1769580047,
+        "narHash": "sha256-tNqCP/+2+peAXXQ2V8RwsBkenlfWMERb+Uy6xmevyhM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "75ed713570ca17427119e7e204ab3590cc3bf2a5",
+        "rev": "366d78c2856de6ab3411c15c1cb4fb4c2bf5c826",
         "type": "github"
       },
       "original": {
@@ -116,22 +116,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-librewolf": {
-      "locked": {
-        "lastModified": 1768564909,
-        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
-        "type": "github"
-      }
-    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -139,11 +123,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769440844,
-        "narHash": "sha256-e31KOBtcI0prHK9wq9yZ2XgY2Hy1D2WGZ3KxeaNkKyk=",
+        "lastModified": 1769623787,
+        "narHash": "sha256-b4vedGe6eEzJ04u3Skg7vWqCkdVUJtoMO0QaMFHF8z4=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "55f2c85d6188ff19132c69f8ac123936e6266474",
+        "rev": "379c2a680332cd16c5b9f35d8fcdfc4b5322fc09",
         "type": "github"
       },
       "original": {
@@ -159,7 +143,6 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-librewolf": "nixpkgs-librewolf",
         "noctalia": "noctalia"
       }
     },

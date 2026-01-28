@@ -21,7 +21,7 @@
 
   programs.firefox = {
     enable = true;
-    package = inputs.nixpkgs-librewolf.legacyPackages.${pkgs.stdenv.hostPlatform.system}.librewolf;
+    package = pkgs.librewolf;
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
