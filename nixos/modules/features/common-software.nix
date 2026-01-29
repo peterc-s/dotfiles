@@ -18,6 +18,7 @@
     fd
     ffmpeg
     file
+    firefox
     fzf
     gimp
     gnused
