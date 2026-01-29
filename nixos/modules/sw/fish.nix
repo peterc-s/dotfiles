@@ -28,6 +28,16 @@
     };
   };
 
+  # set up direnv to work with fish
+  home-manager.users.pete = {
+    programs.direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+      silent = true;
+    };
+  };
+
   # disable if completion is weird but stops long rebuilds
   documentation.man.generateCaches = false;
 }
