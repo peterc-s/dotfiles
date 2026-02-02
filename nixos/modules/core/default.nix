@@ -7,7 +7,7 @@
 }: {
   imports = [
     ./audio.nix
-    ./auto-update.nix
+    ./auto-gc.nix
     ./cpu.nix
     ./fonts.nix
     ./gpg.nix
