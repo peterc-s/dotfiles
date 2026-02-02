@@ -89,6 +89,7 @@ in {
   environment.systemPackages = with pkgs; [
     strongswan
     cacert
+    vscodium-fhs
   ];
 
   services.strongswan.enable = true;
