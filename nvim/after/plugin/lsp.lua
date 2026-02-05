@@ -57,7 +57,7 @@ vim.lsp.config("nixd", {
 		"flake.nix",
 		".git",
 	},
-	filetypes = {"nix"},
+	filetypes = { "nix" },
 	capabilities = capabilities,
 })
 vim.lsp.enable("nixd")
@@ -143,6 +143,17 @@ vim.lsp.config("tinymist", {
 })
 vim.lsp.enable("tinymist")
 
+-- haskell
+vim.lsp.config("haskell-language-server", {
+	cmd = { "haskell-language-server-wrapper", "--lsp" },
+	root_markers = {
+		".git",
+	},
+	filetypes = { "haskell", "lhaskell" },
+	capabilities = capabilities,
+})
+vim.lsp.enable("haskell-language-server")
+
 -- Disable Ruff hover
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
@@ -169,6 +180,7 @@ require("conform").setup({
 		rust = { "rustfmt" },
 		nix = { "alejandra" },
 		typst = { "tinymist" },
+		haskell = { "ormulu" },
 	},
 	format_on_save = {
 		timeout_ms = 1000,

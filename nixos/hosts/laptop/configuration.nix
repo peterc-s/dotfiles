@@ -90,6 +90,7 @@ in {
     strongswan
     cacert
     vscodium-fhs
+    apache-directory-studio
   ];
 
   services.strongswan.enable = true;

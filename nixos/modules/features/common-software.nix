@@ -28,6 +28,7 @@
     home-manager
     imagemagick
     jq
+    killall
     kitty
     libnotify
     libreoffice

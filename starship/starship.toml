@@ -83,6 +83,12 @@ disabled = false
 [rust]
 disabled = true
 
+[haskell]
+disabled = true
+
+[typst]
+disabled = true
+
 [package]
 disabled = true
 
