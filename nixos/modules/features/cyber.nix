@@ -13,7 +13,7 @@
     detect-it-easy
     ghidra
     hexpatch
-    seclists
+    # seclists
     sleuthkit
     wireshark
   ];
