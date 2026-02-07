@@ -20,7 +20,7 @@
     };
 
     binaryninja = {
-      url = "github:peterc-s/nix-binary-ninja";
+      url = "github:jchv/nix-binary-ninja";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
