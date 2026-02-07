@@ -21,8 +21,8 @@ in {
 
     # desktop
     ../../modules/desktop/sway.nix
-    ../../modules/desktop/niri.nix
-    ../../modules/desktop/noctalia-shell.nix
+    # ../../modules/desktop/niri.nix
+    # ../../modules/desktop/noctalia-shell.nix
 
     # common stuff
     ../../modules/core
