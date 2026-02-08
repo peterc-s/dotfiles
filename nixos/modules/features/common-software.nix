@@ -9,6 +9,7 @@
     audacity
     binwalk
     btop
+    cacert
     croc
     dosfstools
     dua
