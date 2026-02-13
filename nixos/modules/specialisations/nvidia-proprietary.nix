@@ -9,8 +9,10 @@
     nvidia-proprietary = {
       configuration = {
         services.xserver.videoDrivers = ["nvidia"];
-        hardware.nvidia.open = false;
-        hardware.nvidia.modesetting.enable = true;
+        hardware.nvidia = {
+          open = false;
+          modesetting.enable = true;
+        };
         environment.systemPackages = with pkgs; [
           nvtopPackages.nvidia
           cudatoolkit

@@ -57,7 +57,8 @@ in {
   ];
 
   # use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # FIXME: update to latest (6.19) when nvidia is fixed
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # cpu
   hardware.cpu.intel.updateMicrocode = true;
@@ -90,6 +91,11 @@ in {
     # strongswan
     vscodium-fhs
     apache-directory-studio
+    nheko
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
   ];
 
   # services.strongswan.enable = true;

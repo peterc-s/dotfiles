@@ -37,6 +37,7 @@
     mupdf
     openssl
     p7zip
+    pandoc
     presenterm
     qbittorrent
     qrencode

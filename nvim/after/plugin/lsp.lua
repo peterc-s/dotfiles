@@ -154,6 +154,17 @@ vim.lsp.config("haskell-language-server", {
 })
 vim.lsp.enable("haskell-language-server")
 
+-- tofu
+vim.lsp.config()
+
+vim.lsp.config("tofu_ls", {
+	cmd = { "tofu-ls", "serve" },
+	filetypes = { "terraform", "terraform-vars" },
+	root_markers = { ".terraform", ".git" },
+	capabilities = capabilities,
+})
+vim.lsp.enable("tofu_ls")
+
 -- Disable Ruff hover
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),

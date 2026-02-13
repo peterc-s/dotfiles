@@ -9,5 +9,7 @@
     meslo-lgs-nf
     nerd-fonts.fira-code
     nerd-fonts.meslo-lg
+    corefonts
+    vista-fonts
   ];
 }
