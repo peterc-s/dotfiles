@@ -155,8 +155,6 @@ vim.lsp.config("haskell-language-server", {
 vim.lsp.enable("haskell-language-server")
 
 -- tofu
-vim.lsp.config()
-
 vim.lsp.config("tofu_ls", {
 	cmd = { "tofu-ls", "serve" },
 	filetypes = { "terraform", "terraform-vars" },
