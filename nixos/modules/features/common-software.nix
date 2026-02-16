@@ -34,6 +34,7 @@
     libnotify
     libreoffice
     lz4
+    mpv
     mupdf
     openssl
     p7zip

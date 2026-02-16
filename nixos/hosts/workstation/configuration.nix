@@ -34,6 +34,7 @@ in {
     ../../modules/sw/git.nix
     ../../modules/sw/librewolf.nix
     ../../modules/sw/neovim.nix
+    ../../modules/sw/obs.nix
     ../../modules/sw/syncthing.nix
     ../../modules/sw/vesktop.nix
 
@@ -48,7 +49,7 @@ in {
   ];
 
   # use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # cpu
   hardware.cpu.amd.updateMicrocode = true;
@@ -63,7 +64,9 @@ in {
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    davinci-resolve
+  ];
 
   system.stateVersion = "25.11"; # don't change without looking up
 }
