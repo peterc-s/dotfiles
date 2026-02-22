@@ -57,8 +57,7 @@ in {
   ];
 
   # use latest kernel
-  # FIXME: update to latest (6.19) when nvidia is fixed
-  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # cpu
   hardware.cpu.intel.updateMicrocode = true;
