@@ -90,11 +90,7 @@ in {
     # strongswan
     vscodium-fhs
     apache-directory-studio
-    nheko
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "olm-3.2.16"
+    jellyfin-desktop
   ];
 
   # services.strongswan.enable = true;
