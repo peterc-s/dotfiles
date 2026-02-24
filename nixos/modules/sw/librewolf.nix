@@ -50,6 +50,10 @@
           url = "http://localhost:8384";
           name = "Syncthing";
         }
+        {
+          url = "https://hedgehog.zone";
+          name = "Homelab";
+        }
       ];
       SearchEngines = {
         Default = "DuckDuckGo";
@@ -77,6 +81,14 @@
             Method = "GET";
             Name = "NixOS Wiki";
             URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+          }
+          {
+            Alias = "!mn";
+            Description = "Search MyNixOS";
+            IconURL = "https://mynixos.com/favicon.png";
+            Method = "GET";
+            Name = "MyNixOS";
+            URLTemplate = "https://mynixos.com/search?q={searchTerms}";
           }
         ];
       };
