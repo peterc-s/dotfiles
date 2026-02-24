@@ -6,6 +6,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    age
     audacity
     binwalk
     btop
