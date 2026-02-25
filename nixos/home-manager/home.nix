@@ -1,12 +1,50 @@
 {
   config,
+  lib,
   pkgs,
   ...
-}: {
-  xdg.configFile.fish = {
-    source = ../../fish;
-    recursive = true;
+}: let
+  symlinkRoot = "/home/pete/dotfiles";
+
+  # most of this is from https://blog.daniel-beskin.com/2025-10-18-symlinking-home-manager#user-content-fn-tweak
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (lib) flatten flip map mapAttrsToList mergeAttrsList;
+
+  pipe = flip lib.pipe;
+  flatMerge = pipe [flatten mergeAttrsList];
+
+  toSrcFile = name: "${symlinkRoot}/${name}";
+  link = pipe [toSrcFile mkOutOfStoreSymlink];
+
+  linkDir = name: {
+    ${name} = {
+      source = link name;
+      recursive = true;
+    };
   };
+
+  linkMappedFiles = attrs: mapAttrsToList (dest: src: {${dest}.source = link src;}) attrs;
+  linkConfDirs = map linkDir;
+
+  confDirs = linkConfDirs [
+    "dunst"
+    "fish"
+    "kitty"
+    "niri"
+    "nvim"
+    "rofi"
+    "satty"
+    "sway"
+    "waybar"
+  ];
+
+  confFiles = linkMappedFiles {
+    "starship.toml" = "starship/starship.toml";
+  };
+
+  links = flatMerge [confDirs confFiles];
+in {
+  xdg.configFile = links;
 
   programs.gpg = {
     scdaemonSettings.disable-ccid = true;
@@ -15,19 +53,5 @@
     };
   };
 
-  home = {
-    stateVersion = "25.11";
-
-    file = {
-      ".config/sway".source = ../../sway;
-      ".config/waybar".source = ../../waybar;
-      ".config/rofi".source = ../../rofi;
-      ".config/dunst".source = ../../dunst;
-      ".config/starship.toml".source = ../../starship/starship.toml;
-      ".config/kitty".source = ../../kitty;
-      ".config/nvim".source = ../../nvim;
-      ".config/satty".source = ../../satty;
-      ".config/niri".source = ../../niri;
-    };
-  };
+  home.stateVersion = "25.11";
 }

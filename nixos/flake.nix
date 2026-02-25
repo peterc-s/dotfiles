@@ -28,6 +28,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    typst-patched = {
+      url = "github:peterc-s/typst-patched";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
