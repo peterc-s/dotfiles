@@ -4,6 +4,7 @@ include '/etc/sway/config.d/*'
 include "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf"
 
 ### Variables
+set $wallpaper /home/pete/repos/nixos-cfg/dotfiles/wallpapers/wlfgrl.png
 set $mod Mod4
 set $left h
 set $down j
@@ -12,7 +13,7 @@ set $right l
 set $term kitty
 set $explorer nemo
 set $lock_cmd swaylock \
-	--image /home/pete/dotfiles/wallpapers/wlfgrl.png \
+	--image $wallpaper \
 	--indicator-radius 25 \
 	--indicator-thickness 5 \
 	--ring-color 373B41 \
@@ -30,7 +31,7 @@ set $browser librewolf
 set $mute_mic_cmd pulsemixer --list-sources | rg -i "mic" | cut -f3 | cut -d "," -f1 | cut -c 6- | xargs -L1 pulsemixer --toggle-mute --id
 
 ### Output configuration
-output * bg /home/pete/repos/nixos-cfg/dotfiles/wallpapers/wlfgrl.png fill
+output * bg $wallpaper fill
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 ### Set workspaces
