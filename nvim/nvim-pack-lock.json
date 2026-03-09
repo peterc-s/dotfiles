@@ -97,6 +97,10 @@
       "rev": "bf5d5eaf23bbfcca9f98a24ed29bd084abf89bf2",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
+    "venn.nvim": {
+      "rev": "b09c2f36ddf70b498281845109bedcf08a7e0de0",
+      "src": "https://github.com/jbyuki/venn.nvim"
+    },
     "vim-abolish": {
       "rev": "dcbfe065297d31823561ba787f51056c147aa682",
       "src": "https://github.com/tpope/vim-abolish"
