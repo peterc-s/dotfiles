@@ -14,9 +14,9 @@ local groups = {
 	"MiniPickTitle",
 	"MiniPickPrompt",
 	"MiniPickPreview",
-	"NormalFloat",
-	"FloatBorder",
-	"FloatTitle",
+	-- "NormalFloat",
+	-- "FloatBorder",
+	-- "FloatTitle",
 }
 
 for _, g in ipairs(groups) do
