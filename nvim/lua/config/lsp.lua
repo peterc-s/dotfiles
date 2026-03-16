@@ -11,6 +11,51 @@ vim.lsp.enable({
 })
 
 -- language specific fixes
+--- multi-file tinymist and typst preview
+local tinymist_main = nil
+
+vim.lsp.config("tinymist", {
+	on_attach = function(client, bufnr)
+		local root = vim.fs.root(bufnr, { "main.typ", ".git", "typst.toml" })
+		if root then
+			local main = root .. "/main.typ"
+			if vim.uv.fs_stat(main) then
+				tinymist_main = main
+				client:exec_cmd({
+					title = "pin",
+					command = "tinymist.pinMain",
+					arguments = { main },
+				}, { bufnr = bufnr })
+			end
+		end
+
+		vim.keymap.set("n", "<leader>tp", function()
+			local main = vim.api.nvim_buf_get_name(0)
+			tinymist_main = main
+			client:exec_cmd({
+				title = "pin",
+				command = "tinymist.pinMain",
+				arguments = { main },
+			}, { bufnr = bufnr })
+		end, { desc = "[T]inymist [P]in", noremap = true })
+
+		vim.keymap.set("n", "<leader>tu", function()
+			tinymist_main = nil
+			client:exec_cmd({
+				title = "unpin",
+				command = "tinymist.pinMain",
+				arguments = { vim.v.null },
+			}, { bufnr = bufnr })
+		end, { desc = "[T]inymist [U]npin", noremap = true })
+	end,
+})
+
+require("typst-preview").setup({
+	get_main_file = function(path)
+		return tinymist_main or path
+	end,
+})
+
 --- fix vim missing in lua
 vim.lsp.config("lua_ls", {
 	settings = {

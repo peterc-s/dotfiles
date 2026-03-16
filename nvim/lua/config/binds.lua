@@ -103,3 +103,6 @@ function _G.Toggle_venn()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>n", ":lua Toggle_venn()<CR>", { noremap = true })
+
+-- typst preview
+map("n", "<leader>tv", ":TypstPreview<CR>")
