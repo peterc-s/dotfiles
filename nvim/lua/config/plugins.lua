@@ -11,7 +11,7 @@ vim.pack.add({
 	gh("cbochs/grapple.nvim"),
 	gh("chomosuke/typst-preview.nvim"),
 	gh("echasnovski/mini.pick"),
-	gh("hiphish/rainbow-delimiters.nvim"),
+	-- gh("hiphish/rainbow-delimiters.nvim"),
 	gh("kylechui/nvim-surround"),
 	gh("lervag/vimtex"),
 	gh("lewis6991/gitsigns.nvim"),

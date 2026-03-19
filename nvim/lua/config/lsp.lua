@@ -8,6 +8,7 @@ vim.lsp.enable({
 	"pyright",
 	"haskell-language-server",
 	"tofu_ls",
+	"wgsl-analyzer",
 })
 
 -- language specific fixes
@@ -121,6 +122,8 @@ require("conform").setup({
 		nix = { "alejandra" },
 		typst = { "typstyle" },
 		haskell = { "ormulu" },
+		wgsl = {},
+		wesl = {},
 	},
 	format_on_save = {
 		timeout_ms = 1000,
@@ -144,6 +147,7 @@ require("nvim-treesitter.configs").setup({
 		"nix",
 		"bash",
 		"python",
+		"wgsl",
 	},
 	auto_install = false,
 	highlight = { enable = true },
