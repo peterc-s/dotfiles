@@ -67,7 +67,7 @@ input * {
 
 ### Key bindings
 # Opening stuff
-bindsym Ctrl+Mod1+t exec $term
+bindsym $mod+t exec $term
 bindsym $mod+e exec $explorer
 bindsym $mod+x kill
 bindsym $mod+d exec $menu
@@ -151,8 +151,6 @@ bindsym $mod+Shift+Alt+5 move container to workspace number 6
 # Layout stuff
 bindsym $mod+b splith
 bindsym $mod+v splitv
-bindsym $mod+t layout stacking
-bindsym $mod+Shift+t layout tabbed
 bindsym $mod+g layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+s floating toggle
