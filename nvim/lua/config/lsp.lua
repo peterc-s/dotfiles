@@ -1,14 +1,15 @@
 vim.lsp.enable({
-	"lua_ls",
-	"tinymist",
-	"nixd",
-	"clangd",
 	"bashls",
-	"ruff",
-	"pyright",
+	"clangd",
 	"haskell-language-server",
+	"lua_ls",
+	"nixd",
+	"pyright",
+	"ruff",
+	"tinymist",
 	"tofu_ls",
 	"wgsl-analyzer",
+	"efm",
 })
 
 -- language specific fixes
@@ -55,6 +56,26 @@ require("typst-preview").setup({
 	get_main_file = function(path)
 		return tinymist_main or path
 	end,
+})
+
+--- proselint
+local proselint_cfg = {
+	lintCommand = "proselint ${INPUT}",
+	lintFormats = { "%f:%l:%c: %trror %m", "%f:%l:%c: %tarning %m", "%f:%l:%c: %m" },
+	lintIgnoreExitCode = true,
+}
+vim.lsp.config("efm", {
+	init_options = {
+		documentFormatting = false,
+	},
+	settings = {
+		languages = {
+			markdown = { proselint_cfg },
+			tex = { proselint_cfg },
+			typst = { proselint_cfg },
+		},
+	},
+	filetypes = { "markdown", "tex", "typst" },
 })
 
 --- fix vim missing in lua
