@@ -154,22 +154,24 @@ require("conform").setup({
 
 -- highlighting
 -- workaround for nixos
-local parser_path = vim.fn.stdpath("data") .. "site/parser"
-vim.opt.runtimepath:append(parser_path)
----@diagnostic disable-next-line: missing-fields
-require("nvim-treesitter.configs").setup({
-	parser_install_dir = parser_path,
-	ensure_installed = {
-		"c",
-		"cpp",
-		"rust",
-		"lua",
-		"typst",
-		"nix",
-		"bash",
-		"python",
-		"wgsl",
-	},
-	auto_install = false,
-	highlight = { enable = true },
-})
+-- local parser_path = vim.fn.stdpath("data") .. "site/parser"
+-- vim.opt.runtimepath:append(parser_path)
+-- ---@diagnostic disable-next-line: missing-fields
+-- require("nvim-treesitter.configs").setup({
+-- 	parser_install_dir = parser_path,
+-- 	ensure_installed = {
+-- 		"c",
+-- 		"cpp",
+-- 		"rust",
+-- 		"lua",
+-- 		"typst",
+-- 		"nix",
+-- 		"bash",
+-- 		"python",
+-- 		"wgsl",
+-- 		"markdown",
+-- 		"markdown_inline",
+-- 	},
+-- 	auto_install = false,
+-- 	highlight = { enable = true },
+-- })
