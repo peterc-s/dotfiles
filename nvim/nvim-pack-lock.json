@@ -5,7 +5,7 @@
       "src": "https://github.com/pechorin/any-jump.vim"
     },
     "blink.cmp": {
-      "rev": "62c3d54f7d739ee46f850ea6832383e3b7ca2ee1",
+      "rev": "007e77662025e6b0da579b38fbe71e8f0f60eea4",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "comfy-line-numbers.nvim": {
@@ -29,7 +29,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
-      "rev": "0a80125bace82d82847d40bc2c38a22d62c6dc2d",
+      "rev": "944ef13cc8d8fe8b846c91f36041c8dfb85ca000",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grapple.nvim": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "leap.nvim": {
-      "rev": "e20f33507bd2d6c671b7273f797f2d3cf521ac61",
+      "rev": "b960d5038c5c505c52e56a54490f9bbb1f0e6ef6",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "markdown.nvim": {
@@ -53,7 +53,7 @@
       "src": "https://github.com/tadmccorkle/markdown.nvim"
     },
     "mini.pick": {
-      "rev": "fe079c2bd894a5ee70b62f23d819620ef40c4949",
+      "rev": "fd7e7efadddcec3f3d7f3b363a99aa44e7286c65",
       "src": "https://github.com/echasnovski/mini.pick"
     },
     "nvim-colorizer.lua": {
@@ -61,11 +61,11 @@
       "src": "https://github.com/norcalli/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
-      "rev": "46204c8fdaa36a9aa3768780450e4bc7a210025f",
+      "rev": "9ccd58a7949091c0cc2777d4e92a45a209c808c1",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
-      "rev": "61319d4bd1c5e336e197defa15bd104c51f0fb29",
+      "rev": "19e39478ccf5fa2eefdb3595af2f2927d0ff2416",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -82,11 +82,11 @@
       "src": "https://github.com/navarasu/onedark.nvim"
     },
     "rainbow-delimiters.nvim": {
-      "rev": "607a438d8c647a355749973fd295e33505afafde",
+      "rev": "50080ed0f44dbc18ae13b81278a01b951a06127a",
       "src": "https://github.com/hiphish/rainbow-delimiters.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "e3c18ddd27a853f85a6f513a864cf4f2982b9f26",
+      "rev": "c7188a8f9d2953696b6303caccbf39c51fa2c1b1",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "typst-preview.nvim": {
-      "rev": "5f3068df703a40fa4b8ac1c13a7d18ed78483be9",
+      "rev": "87db18b8d19c8b0eed399f52e4c527ce5afe4817",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "venn.nvim": {
@@ -106,7 +106,7 @@
       "src": "https://github.com/tpope/vim-abolish"
     },
     "vimtex": {
-      "rev": "82d2305ff71dfb3bd91602534cc9bb9a195bcb38",
+      "rev": "9306903316c3ddd250676b7cf97c84a84c9c8f99",
       "src": "https://github.com/lervag/vimtex"
     }
   }
