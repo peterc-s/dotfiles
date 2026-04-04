@@ -29,7 +29,7 @@ vim.pack.add({
 	gh("stevearc/oil.nvim"),
 	gh("tadmccorkle/markdown.nvim"),
 	gh("tpope/vim-abolish"),
-	-- { src = gh("nvim-treesitter/nvim-treesitter"), version = "master" }, -- probably swap to main once treesitter v0.26.1 is available on nixpkgs
+	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "master" }, -- probably swap to main once treesitter v0.26.1 is available on nixpkgs
 	gh("jbyuki/venn.nvim"),
 })
 
