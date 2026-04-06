@@ -104,7 +104,7 @@ disabled = true
 disabled = true
 
 [nix_shell]
-format = '[$name]($style)'
+format = '[󱄅]($style)'
 style = "bold blue"
 unknown_msg = ""
 disabled = false
