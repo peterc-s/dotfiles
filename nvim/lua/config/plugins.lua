@@ -25,12 +25,13 @@ vim.pack.add({
 	gh("pechorin/any-jump.vim"),
 	gh("rafamadriz/friendly-snippets"),
 	gh("saghen/blink.cmp"),
+	gh("saghen/blink.lib"),
 	gh("stevearc/conform.nvim"),
 	gh("stevearc/dressing.nvim"),
 	gh("stevearc/oil.nvim"),
 	gh("tadmccorkle/markdown.nvim"),
 	gh("tpope/vim-abolish"),
-	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "master" }, -- probably swap to main once treesitter v0.26.1 is available on nixpkgs
+	gh("nvim-treesitter/nvim-treesitter"),
 })
 
 -- configure
@@ -75,3 +76,12 @@ require("ibl").setup({
 require("comfy-line-numbers").setup({
 	hidden_buffer_types = { "terminal", "nofile" },
 })
+
+local hooks = function(ev)
+	local name, kind = ev.data.spec.name, ev.data.kind
+	if name == "blink.cmp" and (kind == "install" or kind == "update") then
+		require("blink.cmp").build():wait(60000)
+	end
+end
+
+vim.api.nvim_create_autocmd("PackChanged", { callback = hooks })
