@@ -21,11 +21,16 @@ MODE:
     WIDTH: 2560
     HEIGHT: 1440
     HZ: 119.998
+  - NAME_DESC: 'AOC 27G1G4'
+    WIDTH: 1920
+    HEIGHT: 1080
+    HZ: 144.001
 
 VRR_OFF:
   - 'Chimei Innolux Corporation 0x143F (eDP-1)'
   - 'Chimei Innolux Corporation 0x14B1 (eDP-1)'
   - 'DELL S2725QS'
+  - 'AOC 27G1G4'
 
 CALLBACK_CMD: notify-send "way-displays ${CALLBACK_LEVEL}" "${CALLBACK_MSG}"
 LOG_THRESHOLD: INFO
