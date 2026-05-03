@@ -1,4 +1,5 @@
 vim.g.mapleader = " " -- leader early
+vim.g.maplocalleader = ";" -- lleader early
 
 -- modules
 require("config.plugins")
