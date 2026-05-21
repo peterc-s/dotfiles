@@ -5,8 +5,10 @@ ORDER:
   - 'HDMI-'
   - '!^DP-'
 
-SCALING: FALSE
 AUTO_SCALE: FALSE
+SCALE:
+  - NAME_DESC: 'Dell Inc. DELL S2722QC D5ZKMD3'
+    SCALE: 1.5
 
 MODE:
   - NAME_DESC: 'Chimei Innolux Corporation 0x143F (eDP-1)'
@@ -25,6 +27,10 @@ MODE:
     WIDTH: 1920
     HEIGHT: 1080
     HZ: 144.001
+  - NAME_DESC: 'Dell Inc. DELL S2722QC D5ZKMD3'
+    WIDTH: 3840
+    HEIGHT: 2160
+    HZ: 60
 
 VRR_OFF:
   - 'Chimei Innolux Corporation 0x143F (eDP-1)'
