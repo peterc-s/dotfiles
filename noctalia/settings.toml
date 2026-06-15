@@ -3,6 +3,19 @@ radius = 9
 scale = 0.80000000447034836
 shadow = false
 thickness = 26
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session"
+]
+start = [ "launcher", "wallpaper", "workspaces", "cpu", "temp", "ram", "network_tx", "network_rx" ]
 
 [lockscreen]
 fingerprint = false
@@ -39,6 +52,8 @@ enabled = []
 
 [shell]
 niri_overview_type_to_launch_enabled = true
+clipboard_enabled = false
+clipboard_history_max_entries = 10
 
 [theme]
 builtin = "Gruvbox"
