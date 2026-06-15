@@ -3,6 +3,7 @@ radius = 9
 scale = 0.80000000447034836
 shadow = false
 thickness = 26
+center = [ "clock", "launcher" ]
 end = [
     "media",
     "tray",
@@ -15,45 +16,51 @@ end = [
     "control-center",
     "session"
 ]
-start = [ "launcher", "wallpaper", "workspaces", "cpu", "temp", "ram", "network_tx", "network_rx" ]
+start = [ "workspaces", "cpu", "temp", "ram", "network_tx", "network_rx" ]
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "audio"
 
 [lockscreen]
 fingerprint = false
 
-[lockscreen_widgets]
-enabled = false
-schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-1" ]
-
-    [lockscreen_widgets.grid]
-    cell_size = 16
-    major_interval = 4
-    visible = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 0.0
-    box_width = 0.0
-    cx = 960.0
-    cy = 957.0
-    output = "DP-1"
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        input_opacity = 1.0
-        input_radius = 6.0
-        show_login_button = true
-
 [plugins]
 enabled = []
 
+[notification]
+layer = "overlay"
+
 [shell]
+avatar_path = "/home/pete/repos/nixos-cfg/dotfiles/wallpapers/detrimentalist.jpg"
 niri_overview_type_to_launch_enabled = true
 clipboard_enabled = false
 clipboard_history_max_entries = 10
+launch_apps_as_systemd_services = true
+
+    [shell.animation]
+    enabled = false
+
+    [shell.panel]
+    borders = false
+    launcher_compact = true
+    launcher_placement = "floating"
+    open_near_click_control_center = true
+    shadow = false
 
 [theme]
 builtin = "Gruvbox"
@@ -78,3 +85,6 @@ transition = [ "fade" ]
 
     [wallpaper.monitors.DP-1]
     path = "/home/pete/repos/nixos-cfg/dotfiles/wallpapers/wlfgrl.png"
+
+[weather]
+enabled = false

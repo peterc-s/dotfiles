@@ -142,6 +142,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+T hotkey-overlay-title="Terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Backslash hotkey-overlay-title="Control Center" { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+W hotkey-overlay-title="Browser" { spawn "librewolf"; }
     Ctrl+Alt+L hotkey-overlay-title="Screen lock" { spawn-sh "swaylock --image /home/pete/repos/nixos-cfg/dotfiles/wallpapers/wlfgrl.png --indicator-radius 25 --indicator-thickness 5 --ring-color 373B41 --key-hl-color F0C674 --inside-wrong-color C56242 --ring-wrong-color C56424 --inside-clear-color F0C674 --ring-ver-color 8ABEB7 --inside-ver-color 8ABEB7 --effect-blur 7x5"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
