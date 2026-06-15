@@ -55,7 +55,7 @@ deleted = "[<$count](fg:11) "
 
 [kubernetes]
 format = '[ﴱ $context\($namespace\)](bold purple) '
-disabled = false
+disabled = true
 
 [terraform]
 format = "[ terraform $version]($style) 壟 [$workspace]($style) "
