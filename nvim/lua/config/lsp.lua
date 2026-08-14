@@ -1,6 +1,7 @@
 vim.lsp.enable({
 	"bashls",
 	"clangd",
+	"elmls",
 	"haskell-language-server",
 	"lua_ls",
 	"nixd",
@@ -146,6 +147,7 @@ require("conform").setup({
 		nix = { "alejandra" },
 		typst = { "typstyle" },
 		haskell = { "ormulu" },
+		elm = { "elm-format" },
 		wgsl = {},
 		wesl = {},
 	},
