@@ -65,7 +65,7 @@ end
 starship init fish | source
 
 # keychain
-eval $(keychain add ~/.ssh/id_ed25519 --eval -Q --immediate 2>/dev/null)
+# eval $(keychain add ~/.ssh/id_ed25519 --eval -Q --immediate 2>/dev/null)
 
 # Fix stupid starship newlines
 set -g __cmd_executed false
